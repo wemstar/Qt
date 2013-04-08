@@ -1,1 +1,9 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>ikony/about.svg</file>
+        <file>ikony/application-exit.svg</file>
+        <file>ikony/document-new.svg</file>
+        <file>ikony/document-open.svg</file>
+        <file>ikony/Gnome-accessories-calculator.svg</file>
+    </qresource>
+</RCC>
