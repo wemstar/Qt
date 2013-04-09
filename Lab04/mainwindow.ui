@@ -95,6 +95,7 @@
      <string>About</string>
     </property>
     <addaction name="actionAbout"/>
+    <addaction name="actionAboutQT"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuAbout"/>
@@ -158,6 +159,15 @@
    </property>
    <property name="toolTip">
     <string>About the progrma</string>
+   </property>
+  </action>
+  <action name="actionAboutQT">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/ikony/document-open.svg</normaloff>:/new/prefix1/ikony/document-open.svg</iconset>
+   </property>
+   <property name="text">
+    <string>aboutQT</string>
    </property>
   </action>
  </widget>
