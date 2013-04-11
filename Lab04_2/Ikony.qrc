@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/new/ikony">
+        <file>icons/about.svg</file>
+        <file>icons/address-book-new.svg</file>
+        <file>icons/application-exit.svg</file>
+        <file>icons/contact-new.svg</file>
+        <file>icons/document-new.svg</file>
+        <file>icons/document-open.svg</file>
+        <file>icons/document-save.svg</file>
+        <file>icons/mail.svg</file>
+        <file>icons/phone.svg</file>
+    </qresource>
+</RCC>
