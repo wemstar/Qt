@@ -25,12 +25,12 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QTextBrowser" name="textBrowser"/>
+        <widget class="QTextBrowser" name="fileList"/>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="addButton">
            <property name="text">
             <string>Add to List</string>
            </property>
@@ -41,7 +41,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="clearButton">
            <property name="text">
             <string>Clear</string>
            </property>
@@ -81,7 +81,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit"/>
+          <widget class="QLineEdit" name="nameEdit"/>
          </item>
         </layout>
        </item>
@@ -101,7 +101,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_2"/>
+          <widget class="QLineEdit" name="surnameEdit"/>
          </item>
         </layout>
        </item>
@@ -121,7 +121,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_3"/>
+          <widget class="QLineEdit" name="noEdit"/>
          </item>
         </layout>
        </item>
@@ -141,7 +141,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_5">
+          <widget class="QLabel" name="procesLabel">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -162,7 +162,7 @@
         </layout>
        </item>
        <item>
-        <widget class="QTextBrowser" name="textBrowser_2"/>
+        <widget class="QTextBrowser" name="fileOutput"/>
        </item>
       </layout>
      </widget>

@@ -11,7 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Lab05_2
 TEMPLATE = app
 
-
+TRANSLATIONS+=zip_archiwe_pl_PL.ts
 SOURCES += main.cpp\
         mainwindow.cpp
 
