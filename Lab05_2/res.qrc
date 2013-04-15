@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/new/Ikony">
+        <file>icons/edit-clear.svg</file>
+        <file>icons/list-add.svg</file>
+        <file>icons/system-run.svg</file>
+    </qresource>
+</RCC>
