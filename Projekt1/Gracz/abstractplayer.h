@@ -10,17 +10,18 @@ class AbstractPlayer:public QObject
 public:
     AbstractPlayer();
 public slots:
-   virtual void trafiony(QPoint);
+   virtual void uderzenie(QPoint);
     virtual void wykonajRuch()=0;
+
 
 
 signals:
     void strzel(QPoint);
     void trafienie(bool);
 
-private:
-    QSet<QPoint> trafione;
-    QSet<AbstractShip*> statki;
+protected:
+    QVector<QPoint> trafione;
+    QVector<AbstractShip*> statki;
 
 
 };

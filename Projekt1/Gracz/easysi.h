@@ -6,6 +6,9 @@ class EasySi : public AbstractPlayer
 {
 public:
     EasySi();
+
+public slots:
+    virtual void wykonajRuch();
 };
 
 #endif // EASYSI_H

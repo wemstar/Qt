@@ -3,3 +3,9 @@
 RealPlayer::RealPlayer()
 {
 }
+
+void RealPlayer::wykonajRuch()
+{
+
+
+}

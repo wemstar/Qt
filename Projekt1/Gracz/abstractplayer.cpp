@@ -6,7 +6,7 @@ AbstractPlayer::AbstractPlayer()
 {
 
 }
-void AbstractPlayer::trafiony(QPoint x )
+void AbstractPlayer::uderzenie(QPoint x )
 {
     bool traf=false;
     foreach (AbstractShip* statek, statki) {
