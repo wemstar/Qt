@@ -7,7 +7,7 @@ class RealPlayer : public AbstractPlayer
 public:
     RealPlayer();
 public slots:
-    virtual void wykonajRuch();
+    virtual void wykonajRuch(QPoint);
 };
 
 #endif // REALPLAYER_H

@@ -10,7 +10,7 @@ void AbstractPlayer::uderzenie(QPoint x )
 {
     bool traf=false;
     foreach (AbstractShip* statek, statki) {
-        if(traf=statek->isHit(x))break;
+//        if(traf=statek->isHit(x))break;
 
     }
     emit trafienie(traf);

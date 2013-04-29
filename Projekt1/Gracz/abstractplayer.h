@@ -10,13 +10,26 @@ class AbstractPlayer:public QObject
 public:
     AbstractPlayer();
 public slots:
+    /**
+      przyjmuje ruch od innego gracza
+      */
    virtual void uderzenie(QPoint);
-    virtual void wykonajRuch()=0;
+
+    /**
+      oblicza ruch specyficzny dla posczególnego gracza
+      */
+   virtual void wykonajRuch(QPoint)=0;
 
 
 
 signals:
+    /**
+      wysuła obliczony ruch do innego gracza;
+      */
     void strzel(QPoint);
+    /**
+      odpowiada czy zostal trafiony statek
+      */
     void trafienie(bool);
 
 protected:

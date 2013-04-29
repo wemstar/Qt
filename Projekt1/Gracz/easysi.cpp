@@ -4,7 +4,7 @@ EasySi::EasySi()
 {
 }
 
-void EasySi::wykonajRuch()
+void EasySi::wykonajRuch(QPoint)
 {
     QPoint cel=QPoint();
     while(true)

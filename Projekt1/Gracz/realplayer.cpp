@@ -4,8 +4,9 @@ RealPlayer::RealPlayer()
 {
 }
 
-void RealPlayer::wykonajRuch()
+void RealPlayer::wykonajRuch(QPoint p)
 {
+    emit strzel(p);
 
 
 }

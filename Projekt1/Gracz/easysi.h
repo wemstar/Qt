@@ -8,7 +8,7 @@ public:
     EasySi();
 
 public slots:
-    virtual void wykonajRuch();
+    virtual void wykonajRuch(QPoint);
 };
 
 #endif // EASYSI_H
