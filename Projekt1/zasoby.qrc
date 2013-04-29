@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/new/statki">
+        <file alias="jeden">Icony/CzteroMasztowiec.svg</file>
+        <file alias="dwa">Icony/DwuMasztowiec.svg</file>
+        <file alias="trzy">Icony/JednoMasztowiec.svg</file>
+        <file>Icony/TrzyMasztowiec.svg</file>
+    </qresource>
+    <qresource prefix="/new/akcje">
+        <file>Icony/actions/application-exit.svg</file>
+        <file>Icony/actions/document-new.svg</file>
+        <file>Icony/actions/document-open.svg</file>
+        <file>Icony/actions/document-open-recent.svg</file>
+        <file>Icony/actions/document-save.svg</file>
+    </qresource>
+</RCC>

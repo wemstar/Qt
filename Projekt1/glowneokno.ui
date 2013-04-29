@@ -6,21 +6,271 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>519</width>
-    <height>413</height>
+    <width>591</width>
+    <height>578</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>GlowneOkno</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTableWidget" name="gracz1Table">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>32</number>
+      </attribute>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>32</number>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>32</number>
+      </attribute>
+      <attribute name="verticalHeaderMinimumSectionSize">
+       <number>32</number>
+      </attribute>
+      <row>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>4</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>5</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>6</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>7</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>8</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>9</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>10</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>A</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>B</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>C</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>D</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>E</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>F</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>G</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>H</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>I</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>J</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="gracz2Table">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>32</number>
+      </attribute>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>32</number>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>32</number>
+      </attribute>
+      <attribute name="verticalHeaderMinimumSectionSize">
+       <number>32</number>
+      </attribute>
+      <row>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>4</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>5</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>6</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>7</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>8</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>9</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>10</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>A</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>B</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>C</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>D</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>E</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>F</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>G</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>H</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>I</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>J</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>519</width>
-     <height>29</height>
+     <width>591</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuGra">
@@ -46,6 +296,10 @@
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew_Game">
+   <property name="icon">
+    <iconset resource="zasoby.qrc">
+     <normaloff>:/new/akcje/Icony/actions/document-new.svg</normaloff>:/new/akcje/Icony/actions/document-new.svg</iconset>
+   </property>
    <property name="text">
     <string>New Game</string>
    </property>
@@ -54,6 +308,10 @@
    </property>
   </action>
   <action name="actionLoadGame">
+   <property name="icon">
+    <iconset resource="zasoby.qrc">
+     <normaloff>:/new/akcje/Icony/actions/document-open.svg</normaloff>:/new/akcje/Icony/actions/document-open.svg</iconset>
+   </property>
    <property name="text">
     <string>Load Game</string>
    </property>
@@ -62,6 +320,10 @@
    </property>
   </action>
   <action name="actionRecentGame">
+   <property name="icon">
+    <iconset resource="zasoby.qrc">
+     <normaloff>:/new/akcje/Icony/actions/document-open-recent.svg</normaloff>:/new/akcje/Icony/actions/document-open-recent.svg</iconset>
+   </property>
    <property name="text">
     <string>Recent Game</string>
    </property>
@@ -70,6 +332,10 @@
    </property>
   </action>
   <action name="actionSave_Game">
+   <property name="icon">
+    <iconset resource="zasoby.qrc">
+     <normaloff>:/new/akcje/Icony/actions/document-save.svg</normaloff>:/new/akcje/Icony/actions/document-save.svg</iconset>
+   </property>
    <property name="text">
     <string>Save Game</string>
    </property>
@@ -78,6 +344,10 @@
    </property>
   </action>
   <action name="actionExit">
+   <property name="icon">
+    <iconset resource="zasoby.qrc">
+     <normaloff>:/new/akcje/Icony/actions/application-exit.svg</normaloff>:/new/akcje/Icony/actions/application-exit.svg</iconset>
+   </property>
    <property name="text">
     <string>Exit</string>
    </property>
@@ -87,6 +357,8 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="zasoby.qrc"/>
+ </resources>
  <connections/>
 </ui>

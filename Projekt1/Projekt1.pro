@@ -36,3 +36,6 @@ HEADERS  += glowneokno.h \
 FORMS    += glowneokno.ui \
     Widgety/newgamewidget.ui \
     Widgety/polestatki.ui
+
+RESOURCES += \
+    zasoby.qrc

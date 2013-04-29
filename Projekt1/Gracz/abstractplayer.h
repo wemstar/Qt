@@ -9,6 +9,10 @@ class AbstractPlayer:public QObject
     Q_OBJECT
 public:
     AbstractPlayer();
+
+
+
+
 public slots:
     /**
       przyjmuje ruch od innego gracza
@@ -19,6 +23,10 @@ public slots:
       oblicza ruch specyficzny dla posczególnego gracza
       */
    virtual void wykonajRuch(QPoint)=0;
+    /**
+      slot przyjumjacy czy udzerzenie trafilo
+      */
+    void isHit(QPoint x,bool traf);
 
 
 
@@ -30,13 +38,19 @@ signals:
     /**
       odpowiada czy zostal trafiony statek
       */
-    void trafienie(bool);
+    void trafienie(QPoint,bool);
 
 protected:
-    QVector<QPoint> trafione;
+
+    QHash<QPoint,bool> trafione;
     QVector<AbstractShip*> statki;
 
 
 };
+
+inline uint qHash(const QPoint& p)
+{
+    return qHash(p.x()+p.y());
+}
 
 #endif // ABSTRACTPLAYER_H

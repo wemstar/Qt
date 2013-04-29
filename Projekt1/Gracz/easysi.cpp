@@ -1,5 +1,5 @@
 #include "easysi.h"
-
+#include <iostream>
 EasySi::EasySi()
 {
 }
@@ -14,6 +14,9 @@ void EasySi::wykonajRuch(QPoint)
 
 
     }
-    trafione.append(cel);
+
+
     emit strzel(cel);
+//    std::cerr<<"SI"<<cel.x()<<cel.y()<<std::endl;
 }
+
