@@ -12,4 +12,8 @@
         <file>Icony/actions/document-open-recent.svg</file>
         <file>Icony/actions/document-save.svg</file>
     </qresource>
+    <qresource prefix="/new/cel">
+        <file alias="trafiony">Icony/clean-fire.svg</file>
+        <file alias="pudlo">Icony/miss.svg</file>
+    </qresource>
 </RCC>

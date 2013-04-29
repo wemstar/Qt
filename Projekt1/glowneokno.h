@@ -17,13 +17,15 @@ public:
     ~GlowneOkno();
     
 private slots:
-    void on_gracz1Table_cellClicked(int row, int column);
 
-    void on_gracz1Table_itemClicked(QTableWidgetItem *item);
+
+
 
     void secondPlayerMove(QPoint,bool);
+    void firstPlayerMove(QPoint,bool);
 
-
+protected:
+    void zaznaczCel(QTableWidget *cel,QPoint punkt,bool traf);
 private:
     Ui::GlowneOkno *ui;
     Gra game;

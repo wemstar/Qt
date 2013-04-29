@@ -14,6 +14,7 @@ public:
 signals:
     void realStrzal(QPoint);
     void abstractHit(QPoint,bool);
+    void realHit(QPoint,bool);
 
 
     

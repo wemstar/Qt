@@ -1,9 +1,15 @@
 #include "abstractplayer.h"
 #include <QPoint>
 
+#include "../Statki/jednomasztowiec.h".h"
+
 
 AbstractPlayer::AbstractPlayer()
 {
+    for(int i=0;i<5;++i)
+    {
+        statki.append(new JednoMasztowiec(QPoint(i,i),AbstractShip::LEFT,this));
+    }
 
 }
 void AbstractPlayer::uderzenie(QPoint x )
