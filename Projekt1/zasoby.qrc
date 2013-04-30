@@ -1,9 +1,9 @@
 <RCC>
     <qresource prefix="/new/statki">
-        <file alias="jeden">Icony/CzteroMasztowiec.svg</file>
+        <file alias="cztery">Icony/CzteroMasztowiec.svg</file>
         <file alias="dwa">Icony/DwuMasztowiec.svg</file>
-        <file alias="trzy">Icony/JednoMasztowiec.svg</file>
-        <file>Icony/TrzyMasztowiec.svg</file>
+        <file alias="jeden">Icony/JednoMasztowiec.svg</file>
+        <file alias="trzy">Icony/TrzyMasztowiec.svg</file>
     </qresource>
     <qresource prefix="/new/akcje">
         <file>Icony/actions/application-exit.svg</file>

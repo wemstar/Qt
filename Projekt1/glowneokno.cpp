@@ -42,7 +42,7 @@ void GlowneOkno::secondPlayerMove(QPoint x, bool t)
 void GlowneOkno::firstPlayerMove(QPoint x, bool t)
 {
     zaznaczCel(ui->gracz2Table,x,t);
-    std::cerr << "cos";
+//    std::cerr << "cos";
 
 }
 

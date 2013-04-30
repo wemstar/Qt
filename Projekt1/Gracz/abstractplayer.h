@@ -4,6 +4,9 @@
 #include <QtCore>
 #include "../Statki/abstractship.h"
 
+/**
+ * Klasa reprezentuje abstrakcyjnego gracza 
+ */
 class AbstractPlayer:public QObject
 {
     Q_OBJECT
@@ -15,42 +18,58 @@ public:
 
 public slots:
     /**
-      przyjmuje ruch od innego gracza
-      */
+     * przyjmuje uderzenie od innego gracza
+     * @param QPoint punkt w który udzerzył
+     */
    virtual void uderzenie(QPoint);
 
     /**
-      oblicza ruch specyficzny dla posczególnego gracza
-      */
+     * Wykonuje ruch specyficzny dla danego gracza
+     * @param QPoint
+     */
    virtual void wykonajRuch(QPoint)=0;
     /**
-      slot przyjumjacy czy udzerzenie trafilo
-      */
+     * przypisuje do tablicy celów czy statek został trafiony
+     * @param x trafiony punkt  
+     * @param traf czy został trafiony
+     */
     void isHit(QPoint x,bool traf);
 
 
 
 signals:
-    /**
-      wysuła obliczony ruch do innego gracza;
-      */
+   /**
+    * wysyła do innego gracza punkt
+    * @param QPoint
+    */
     void strzel(QPoint);
     /**
-      odpowiada czy zostal trafiony statek
-      */
+     * odpowiada na strzał inego gracza
+     * @param QPoint punkt trafienia
+     * @param bool  czy pod punktem zanjdował się statek
+     */
     void trafienie(QPoint,bool);
 
 protected:
-
+    /**
+     * tablica zawierająca trafione punkty oraz ich wartośc logiczną
+     */
     QHash<QPoint,bool> trafione;
+    /**
+     * tablica zawiera statki
+     */
     QVector<AbstractShip*> statki;
 
 
 };
-
+/**
+ * funkcja hasująca dla punktów
+ * @param  p
+ * @return
+ */
 inline uint qHash(const QPoint& p)
 {
-    return qHash(p.x()+p.y());
+    return qHash(p.x()*p.y());
 }
 
 #endif // ABSTRACTPLAYER_H

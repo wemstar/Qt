@@ -21,7 +21,10 @@ SOURCES += main.cpp\
     Statki/abstractship.cpp \
     Gracz/realplayer.cpp \
     gra.cpp \
-    Statki/jednomasztowiec.cpp
+    Statki/jednomasztowiec.cpp \
+    Statki/dwumasztowiec.cpp \
+    Statki/trojmasztowiec.cpp \
+    Statki/czteromasztowiec.cpp
 
 HEADERS  += glowneokno.h \
     Gracz/easysi.h \
@@ -33,7 +36,10 @@ HEADERS  += glowneokno.h \
     Gracz/realplayer.h \
     Gracz/easysi.h \
     gra.h \
-    Statki/jednomasztowiec.h
+    Statki/jednomasztowiec.h \
+    Statki/dwumasztowiec.h \
+    Statki/trojmasztowiec.h \
+    Statki/czteromasztowiec.h
 
 FORMS    += glowneokno.ui \
     Widgety/newgamewidget.ui \
