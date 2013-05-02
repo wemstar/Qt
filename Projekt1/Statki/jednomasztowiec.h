@@ -11,7 +11,7 @@ class JednoMasztowiec : public AbstractShip
     Q_OBJECT
 public:
     explicit JednoMasztowiec(QPoint poz,direction dir,QObject *parent = 0);
-    virtual bool isHit(QPoint);
+
     
 signals:
     

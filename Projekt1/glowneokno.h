@@ -37,6 +37,9 @@ private slots:
      */
     void firstPlayerMove(QPoint,bool);
 
+    void firstPlayerDrawn(QList<QPoint> punkty,QPixmap pic);
+    void secondPlayerDrawn(QList<QPoint> punkty,QPixmap pic);
+
 protected:
 	/**
 	 * metoda zaznacza trafiony punkt w odpowiedniej tabelce
@@ -45,9 +48,10 @@ protected:
 	 * @param traf czy pod celem ukrywał się statek
 	 */
     void zaznaczCel(QTableWidget *cel,QPoint punkt,bool traf);
+    void zatopCel(QTableWidget * cel,QPoint punkt,QPixmap pic);
 private:
     Ui::GlowneOkno *ui;
-    Gra game;
+    Gra *game;
 };
 
 #endif // GLOWNEOKNO_H

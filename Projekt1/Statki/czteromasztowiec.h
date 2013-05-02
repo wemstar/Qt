@@ -7,7 +7,7 @@ class CzteroMasztowiec : public AbstractShip
     Q_OBJECT
 public:
     explicit CzteroMasztowiec(QPoint poz,direction dir,QObject *parent = 0);
-    virtual bool isHit(QPoint pkt);
+
     
 signals:
     

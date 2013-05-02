@@ -9,7 +9,7 @@
 class RealPlayer : public AbstractPlayer
 {
 public:
-    RealPlayer();
+    RealPlayer(QObject* parent=0);
 public slots:
 /**
  * funkcja odpowiada za ruch gracza jest on przechwytywany z głównego okna

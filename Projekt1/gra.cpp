@@ -6,8 +6,10 @@ Gra::Gra(QObject *parent) :
     QObject(parent)
 {
 
-    gracz1=new RealPlayer();
-    gracz2=new EasySi();
+    gracz1=new RealPlayer(this);
+    gracz2=new EasySi(this);
+    gracz2->losujStatki();
+    gracz1->losujStatki();
     // przesyła sygnał z gui do gracza
     connect(this,SIGNAL(realStrzal(QPoint)),gracz1,SLOT(wykonajRuch(QPoint)));
 
@@ -23,6 +25,13 @@ Gra::Gra(QObject *parent) :
     //sygnały przekazywane do GUI
     connect(gracz1,SIGNAL(trafienie(QPoint,bool)),this,SIGNAL(abstractHit(QPoint,bool)));
     connect(gracz2,SIGNAL(trafienie(QPoint,bool)),this,SIGNAL(realHit(QPoint,bool)));
+
+    connect(gracz1,SIGNAL(zatonol(QList<QPoint>,QPixmap)),this,SIGNAL(abstractZatonol(QList<QPoint>,QPixmap)));
+    connect(gracz2,SIGNAL(zatonol(QList<QPoint>,QPixmap)),this,SIGNAL(realZatonol(QList<QPoint>,QPixmap)));
+
+    //poloczenie do stakow
+
+
 
 
 }

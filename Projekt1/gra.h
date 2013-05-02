@@ -31,6 +31,9 @@ signals:
      */
     void realHit(QPoint,bool);
 
+    void realZatonol(QList<QPoint>,QPixmap);
+    void abstractZatonol(QList<QPoint>,QPixmap);
+
 
     
 public slots:

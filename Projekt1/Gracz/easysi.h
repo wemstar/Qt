@@ -10,7 +10,7 @@
 class EasySi : public AbstractPlayer
 {
 public:
-    EasySi();
+    EasySi(QObject* parent=0);
 
 public slots:
 /**

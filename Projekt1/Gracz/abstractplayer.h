@@ -11,7 +11,8 @@ class AbstractPlayer:public QObject
 {
     Q_OBJECT
 public:
-    AbstractPlayer();
+    AbstractPlayer(QObject* parent=0);
+    void losujStatki();
 
 
 
@@ -49,8 +50,10 @@ signals:
      * @param bool  czy pod punktem zanjdował się statek
      */
     void trafienie(QPoint,bool);
+    void zatonol(QList<QPoint>,QPixmap);
 
 protected:
+
     /**
      * tablica zawierająca trafione punkty oraz ich wartośc logiczną
      */
@@ -62,14 +65,6 @@ protected:
 
 
 };
-/**
- * funkcja hasująca dla punktów
- * @param  p
- * @return
- */
-inline uint qHash(const QPoint& p)
-{
-    return qHash(p.x()*p.y());
-}
+
 
 #endif // ABSTRACTPLAYER_H

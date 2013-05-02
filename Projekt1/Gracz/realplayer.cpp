@@ -1,6 +1,6 @@
 #include "realplayer.h"
 #include <iostream>
-RealPlayer::RealPlayer()
+RealPlayer::RealPlayer(QObject* parent):AbstractPlayer(parent)
 {
 }
 

@@ -4,6 +4,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    qsrand(QTime::currentTime().msec());
     GlowneOkno w;
     w.show();
     

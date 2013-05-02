@@ -1,6 +1,6 @@
 #include "easysi.h"
 #include <iostream>
-EasySi::EasySi()
+EasySi::EasySi(QObject* parent):AbstractPlayer(parent)
 {
 }
 

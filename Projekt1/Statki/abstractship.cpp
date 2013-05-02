@@ -1,14 +1,56 @@
 #include "abstractship.h"
 
-AbstractShip::AbstractShip(QPoint poz,AbstractShip::direction dir,QObject* parent):QObject(parent)
+AbstractShip::AbstractShip(QPoint poz,AbstractShip::direction dir,int il,QObject* parent):QObject(parent)
 {
-    pozycja=poz;
-    kierunek=dir;
+    int dx=0,dy=0;
+    if(dir==AbstractShip::RIGHT)dx=1;
+    else dy=1;
+    for(int i=0;i<il;++i)
+    {
+        pozycja.insert(QPoint(poz.x()+dx*i,poz.y()+dy*i),true);
+
+    }
+
+
 }
 
-bool AbstractShip::isValid(const AbstractShip &a, const AbstractShip &b)
+bool AbstractShip::isBouncing(const AbstractShip &a, const AbstractShip &b)
 {
-    if(a.pozycja==b.pozycja) return false;
+    foreach(QPoint pkt1,a.pozycja.keys())
+    {
+        foreach(QPoint pkt2,b.pozycja.keys())
+        {
+            if(distance(pkt1,pkt2)<2)return true;
+        }
+    }
+    return false;
 
+}
+
+
+bool AbstractShip::isHit(QPoint pkt)
+{
+
+    foreach(QPoint punkt,pozycja.keys())
+    {
+        if(punkt==pkt)
+        {
+            pozycja.insert(pkt,false);
+            return true;
+        }
+    }
+    if(pozycja.keys(true).isEmpty())emit zatonol(pozycja.keys(),obrazek);
+
+    return false;
+
+
+}
+bool AbstractShip::isValid()
+{
+    foreach(QPoint pkt,pozycja.keys())
+    {
+        if(pkt.x()>9&&pkt.y()>9&&pkt.x()<0&&pkt.y()<0)return false;
+    }
+    return true;
 }
 
