@@ -13,6 +13,7 @@ class Gra : public QObject
     Q_OBJECT
 public:
     explicit Gra(QObject *parent = 0);
+
     ~Gra();
     
 signals:
@@ -33,6 +34,7 @@ signals:
 
     void realZatonol(QList<QPoint>,QPixmap);
     void abstractZatonol(QList<QPoint>,QPixmap);
+    void planszaGotowa();
 
 
     
@@ -43,11 +45,14 @@ public slots:
 	 * @param y
 	 */
     void wybierzCel(int x,int y);
-
+    void nowaGra();
+    void polaczGraczy();
+    void wybierzStatki();
 
 private:
     AbstractPlayer* gracz1;
     AbstractPlayer* gracz2;
+
 
     
 };

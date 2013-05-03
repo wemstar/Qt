@@ -277,6 +277,10 @@
     <property name="title">
      <string>Game</string>
     </property>
+    <addaction name="actionNew_Game"/>
+    <addaction name="actionLoadGame"/>
+    <addaction name="actionSave_Game"/>
+    <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuO_grze">
     <property name="title">
@@ -293,6 +297,10 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionDodaj_Jednomasztowca"/>
+   <addaction name="actionAddTwo_funnel"/>
+   <addaction name="actionAdd_Three_funne"/>
+   <addaction name="actionAdd_Four_funnel"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew_Game">
@@ -353,6 +361,54 @@
    </property>
    <property name="toolTip">
     <string>Exit game</string>
+   </property>
+  </action>
+  <action name="actionDodaj_Jednomasztowca">
+   <property name="icon">
+    <iconset resource="zasoby.qrc">
+     <normaloff>:/new/statki/jeden</normaloff>:/new/statki/jeden</iconset>
+   </property>
+   <property name="text">
+    <string>Add Single-Funnel</string>
+   </property>
+   <property name="toolTip">
+    <string>Dodaje  jednomasztowca do planszy</string>
+   </property>
+  </action>
+  <action name="actionAddTwo_funnel">
+   <property name="icon">
+    <iconset resource="zasoby.qrc">
+     <normaloff>:/new/statki/dwa</normaloff>:/new/statki/dwa</iconset>
+   </property>
+   <property name="text">
+    <string>AddTwo-funnel</string>
+   </property>
+   <property name="toolTip">
+    <string>add two-funnel to map</string>
+   </property>
+  </action>
+  <action name="actionAdd_Three_funne">
+   <property name="icon">
+    <iconset resource="zasoby.qrc">
+     <normaloff>:/new/statki/trzy</normaloff>:/new/statki/trzy</iconset>
+   </property>
+   <property name="text">
+    <string>Add Three-funne</string>
+   </property>
+   <property name="toolTip">
+    <string>add three-funne to map</string>
+   </property>
+  </action>
+  <action name="actionAdd_Four_funnel">
+   <property name="icon">
+    <iconset resource="zasoby.qrc">
+     <normaloff>:/new/statki/cztery</normaloff>:/new/statki/cztery</iconset>
+   </property>
+   <property name="text">
+    <string>Add Four-funnel</string>
+   </property>
+   <property name="toolTip">
+    <string>add four-funnel to map</string>
    </property>
   </action>
  </widget>

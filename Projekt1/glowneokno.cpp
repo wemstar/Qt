@@ -14,12 +14,12 @@ GlowneOkno::GlowneOkno(QWidget *parent) :
     ui->gracz1Table->verticalHeader()->setResizeMode(QHeaderView::Stretch);
     ui->gracz1Table->setMinimumSize(400,400);
     ui->gracz1Table->setEnabled(false);
-    //ustawienia dla tabeli 2
+//    ustawienia dla tabeli 2
 
     ui->gracz2Table->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
     ui->gracz2Table->verticalHeader()->setResizeMode(QHeaderView::Stretch);
     ui->gracz2Table->setMinimumSize(400,400);
-//    ui->gracz2Table->setEnabled(false);
+    ui->gracz2Table->setEnabled(false);
 
     connect(ui->gracz2Table,SIGNAL(cellPressed(int,int)),game,SLOT(wybierzCel(int,int)));
     connect(game,SIGNAL(abstractHit(QPoint,bool)),this,SLOT(secondPlayerMove(QPoint,bool)));
@@ -27,6 +27,7 @@ GlowneOkno::GlowneOkno(QWidget *parent) :
 
     connect(game,SIGNAL(abstractZatonol(QList<QPoint>,QPixmap)),this,SLOT(secondPlayerDrawn(QList<QPoint>,QPixmap)));
     connect(game,SIGNAL(realZatonol(QList<QPoint>,QPixmap)),this,SLOT(firstPlayerDrawn(QList<QPoint>,QPixmap)));
+    ui->mainToolBar->setVisible(false);
 }
 
 GlowneOkno::~GlowneOkno()
@@ -99,3 +100,15 @@ void GlowneOkno::secondPlayerDrawn(QList<QPoint> punkty, QPixmap pic)
     repaint();
 }
 
+
+void GlowneOkno::on_actionNew_Game_triggered()
+{
+    ui->gracz1Table->setEnabled(true);
+    ui->gracz2Table->setEnabled(false);
+    ui->mainToolBar->setVisible(true);
+
+}
+
+void GlowneOkno::isGood(QList<QPoint> punkt, QPixmap pic)
+{
+}

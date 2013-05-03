@@ -8,6 +8,18 @@
 
 AbstractPlayer::AbstractPlayer(QObject* parent):QObject(parent)
 {
+    connect(this,SIGNAL(zatonol(QList<QPoint>,QPixmap)),this,SLOT(zniczenieStatku()));
+    iloscStatkow=10;
+    statki.append(new CzteroMasztowiec(QPoint(qrand()%10,qrand()%10),qrand()%2==0?AbstractShip::RIGHT:AbstractShip::DOWN,this));
+    for(int i=0;i<2;++i){
+    statki.append(new TrojMasztowiec(QPoint(qrand()%10,qrand()%10),qrand()%2==0?AbstractShip::RIGHT:AbstractShip::DOWN,this));
+    }
+    for(int i=0;i<3;i++){
+    statki.append(new DwuMasztowiec(QPoint(qrand()%10,qrand()%10),qrand()%2==0?AbstractShip::RIGHT:AbstractShip::DOWN,this));
+    }
+    for(int i=0;i<4;++i){
+    statki.append(new JednoMasztowiec(QPoint(qrand()%10,qrand()%10),qrand()%2==0?AbstractShip::RIGHT:AbstractShip::DOWN,this));
+    }
 
 
 }
@@ -30,97 +42,38 @@ void AbstractPlayer::isHit(QPoint x, bool traf)
 
 }
 
+void AbstractPlayer::zniczenieStatku()
+{
+    --iloscStatkow;
+    if(iloscStatkow==0)emit przegrana();
+}
+
 void AbstractPlayer::losujStatki()
 {
-    int i=1;
-    while(i!=0)
+
+
+    for(int i=0;i<statki.size();++i)
     {
-        AbstractShip::direction dir=(qrand()%2==0)?AbstractShip::RIGHT : AbstractShip::DOWN;
-        AbstractShip * statek=new CzteroMasztowiec(QPoint(qrand()%10,qrand()%10),dir,this);
-
-
-        if(statek->isValid())
+        bool bounce=true;
+        while(!statki[i]->isValid()||bounce)
         {
-            statki.append(statek);
-            --i;
-
-        }
-        else delete statek;
-
-    }
-    i=2;
-    while(i!=0)
-    {
-        AbstractShip::direction dir=(qrand()%2==0)?AbstractShip::RIGHT : AbstractShip::DOWN;
-        AbstractShip * statek=new TrojMasztowiec(QPoint(qrand()%10,qrand()%10),dir,this);
-        bool styk=true;
-        foreach(AbstractShip* sta,statki)
-        {
-            if(AbstractShip::isBouncing(*sta,*statek))
+            statki[i]->setPosition(QPoint(qrand()%10,qrand()%10),qrand()%2==0?AbstractShip::RIGHT:AbstractShip::DOWN);
+            for(int j=0;j<i;++j)
             {
-                styk=false;
-                break;
+                if(AbstractShip::isBouncing(*statki[i],*statki[j]))
+                {
+                    bounce=true;
+                    break;
+                }
+                else bounce=false;
+
             }
+            if(i==0)bounce=false;
 
         }
-        if(statek->isValid()&& styk)
-        {
-            statki.append(statek);
-            --i;
-
-        }
-        else delete statek;
-
-
     }
-    i=3;
-    while(i!=0)
-    {
-        AbstractShip::direction dir=(qrand()%2==0)?AbstractShip::RIGHT : AbstractShip::DOWN;
-        AbstractShip * statek=new DwuMasztowiec(QPoint(qrand()%10,qrand()%10),dir,this);
-        bool styk=true;
-        foreach(AbstractShip* sta,statki)
-        {
-            if(AbstractShip::isBouncing(*sta,*statek))
-            {
-                styk=false;
-                break;
-            }
 
-        }
-        if(statek->isValid()&& styk)
-        {
-            statki.append(statek);
-            --i;
 
-        }
-        else delete statek;
-
-    }
-    i=4;
-    while(i!=0)
-    {
-        AbstractShip::direction dir=(qrand()%2==0)?AbstractShip::RIGHT : AbstractShip::DOWN;
-        AbstractShip * statek=new JednoMasztowiec(QPoint(qrand()%9+1,qrand()%9+1),dir,this);
-        bool styk=true;
-        foreach(AbstractShip* sta,statki)
-        {
-            if(AbstractShip::isBouncing(*sta,*statek))
-            {
-                styk=false;
-                break;
-            }
-
-        }
-        if(statek->isValid()&& styk)
-        {
-            statki.append(statek);
-            --i;
-
-        }
-        else delete statek;
-
-    }
     foreach(AbstractShip* sta,statki)
     {
         connect(sta,SIGNAL(zatonol(QList<QPoint>,QPixmap)),this,SIGNAL(zatonol(QList<QPoint>,QPixmap)));

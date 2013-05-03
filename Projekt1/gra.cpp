@@ -5,9 +5,15 @@
 Gra::Gra(QObject *parent) :
     QObject(parent)
 {
-
     gracz1=new RealPlayer(this);
     gracz2=new EasySi(this);
+    connect(this,SIGNAL(planszaGotowa()),this,SLOT(polaczGraczy()));
+
+}
+
+void Gra::polaczGraczy()
+{
+
     gracz2->losujStatki();
     gracz1->losujStatki();
     // przesyła sygnał z gui do gracza
@@ -29,11 +35,10 @@ Gra::Gra(QObject *parent) :
     connect(gracz1,SIGNAL(zatonol(QList<QPoint>,QPixmap)),this,SIGNAL(abstractZatonol(QList<QPoint>,QPixmap)));
     connect(gracz2,SIGNAL(zatonol(QList<QPoint>,QPixmap)),this,SIGNAL(realZatonol(QList<QPoint>,QPixmap)));
 
-    //poloczenie do stakow
+}
 
-
-
-
+void Gra::wybierzStatki()
+{
 }
 Gra::~Gra()
 {
@@ -45,4 +50,18 @@ void Gra::wybierzCel(int x, int y)
 {
     QPoint strzal= QPoint(x,y);
     emit realStrzal(strzal);
+}
+
+void Gra::nowaGra()
+{
+    wybierzStatki();
+
+
+
+
+
+
+
+
+
 }

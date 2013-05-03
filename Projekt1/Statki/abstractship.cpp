@@ -1,15 +1,12 @@
 #include "abstractship.h"
+#include <iostream>
 
 AbstractShip::AbstractShip(QPoint poz,AbstractShip::direction dir,int il,QObject* parent):QObject(parent)
 {
-    int dx=0,dy=0;
-    if(dir==AbstractShip::RIGHT)dx=1;
-    else dy=1;
-    for(int i=0;i<il;++i)
-    {
-        pozycja.insert(QPoint(poz.x()+dx*i,poz.y()+dy*i),true);
 
-    }
+    ilosc_pol=il;
+    setPosition(poz,dir);
+
 
 
 }
@@ -49,8 +46,29 @@ bool AbstractShip::isValid()
 {
     foreach(QPoint pkt,pozycja.keys())
     {
-        if(pkt.x()>9&&pkt.y()>9&&pkt.x()<0&&pkt.y()<0)return false;
+        if((pkt.x()>9)||(pkt.y()>9)||(pkt.x()<0)||(pkt.y()<0))
+        {
+//            std::cerr<<pkt.x()<<" "<<pkt.y()<<std::endl;
+            return false;
+        }
+
     }
     return true;
+}
+
+void AbstractShip::setPosition(QPoint poz, AbstractShip::direction dir)
+{
+
+    pozycja.clear();
+    int dx=0,dy=0;
+    if(dir==AbstractShip::RIGHT)dx=1;
+    else dy=1;
+    for(int i=0;i<ilosc_pol;++i)
+    {
+        pozycja.insert(QPoint(poz.x()+dx*i,poz.y()+dy*i),true);
+
+    }
+
+
 }
 

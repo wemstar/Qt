@@ -22,9 +22,10 @@ signals:
     void zatonol(QList<QPoint>,QPixmap);
     
 public slots:
+    void setPosition(QPoint poz,direction dir);
 
 protected:
-    QHash<QPoint,bool>& punktyStatku();
+//    QHash<QPoint,bool>& punktyStatku();
     QHash<QPoint,bool> pozycja;
 
     QPixmap obrazek;

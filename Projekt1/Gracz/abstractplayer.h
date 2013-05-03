@@ -35,6 +35,7 @@ public slots:
      * @param traf czy został trafiony
      */
     void isHit(QPoint x,bool traf);
+    void zniczenieStatku();
 
 
 
@@ -51,6 +52,7 @@ signals:
      */
     void trafienie(QPoint,bool);
     void zatonol(QList<QPoint>,QPixmap);
+    void przegrana();
 
 protected:
 
@@ -62,6 +64,7 @@ protected:
      * tablica zawiera statki
      */
     QVector<AbstractShip*> statki;
+    int iloscStatkow;
 
 
 };

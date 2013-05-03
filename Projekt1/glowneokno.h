@@ -40,6 +40,11 @@ private slots:
     void firstPlayerDrawn(QList<QPoint> punkty,QPixmap pic);
     void secondPlayerDrawn(QList<QPoint> punkty,QPixmap pic);
 
+    void on_actionNew_Game_triggered();
+
+    void isGood(QList<QPoint> punkt,QPixmap pic);
+signals:
+    void wybierzStatek(QPoint,AbstractShip::direction,int );
 protected:
 	/**
 	 * metoda zaznacza trafiony punkt w odpowiedniej tabelce
