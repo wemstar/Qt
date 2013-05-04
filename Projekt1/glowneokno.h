@@ -50,6 +50,7 @@ private slots:
     void on_actionAdd_Three_funne_triggered();
 
     void on_actionAdd_Four_funnel_triggered();
+    void rozpocznijGre();
 
 signals:
     void wybierzStatek(QPoint,AbstractShip::direction,int );

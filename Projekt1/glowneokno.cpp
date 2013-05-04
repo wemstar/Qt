@@ -21,13 +21,21 @@ GlowneOkno::GlowneOkno(QWidget *parent) :
     ui->gracz2Table->setMinimumSize(400,400);
     ui->gracz2Table->setEnabled(false);
 
+    connect(game,SIGNAL(abstractRysuj(QList<QPoint>,QPixmap)),this,SLOT(secondPlayerDraw(QList<QPoint>,QPixmap)));
+    connect(game,SIGNAL(realRysuj(QList<QPoint>,QPixmap)),this,SLOT(firstPlayerDraw(QList<QPoint>,QPixmap)));
+
+
+    ui->mainToolBar->setVisible(false);
+}
+void GlowneOkno::rozpocznijGre()
+{
     connect(ui->gracz2Table,SIGNAL(cellPressed(int,int)),game,SLOT(wybierzCel(int,int)));
     connect(game,SIGNAL(abstractHit(QPoint,bool)),this,SLOT(secondPlayerMove(QPoint,bool)));
     connect(game,SIGNAL(realHit(QPoint,bool)),this,SLOT(firstPlayerMove(QPoint,bool)));
 
-    connect(game,SIGNAL(abstractRysuj(QList<QPoint>,QPixmap)),this,SLOT(secondPlayerDraw(QList<QPoint>,QPixmap)));
-    connect(game,SIGNAL(realRysuj(QList<QPoint>,QPixmap)),this,SLOT(firstPlayerDraw(QList<QPoint>,QPixmap)));
-    ui->mainToolBar->setVisible(false);
+
+    ui->gracz1Table->setEnabled(false);
+    ui->gracz2Table->setEnabled(true);
 }
 
 GlowneOkno::~GlowneOkno()
@@ -121,6 +129,7 @@ void GlowneOkno::on_actionNew_Game_triggered()
     ui->gracz2Table->setEnabled(false);
     ui->mainToolBar->setVisible(true);
     connect(this ,SIGNAL(wybierzStatek(QPoint,AbstractShip::direction,int)),game,SIGNAL(ustawStatek(QPoint,AbstractShip::direction,int)));
+    connect(game,SIGNAL(rozpocznijGre()),this,SLOT(rozpocznijGre()));
 
 
 }

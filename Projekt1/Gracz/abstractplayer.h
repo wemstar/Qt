@@ -73,6 +73,10 @@ protected:
      */
     QVector<AbstractShip*> statki;
     int iloscStatkow;
+    int jednoMaszt;
+    int dwuMaszt;
+    int trzyMaszt;
+    int czteroMaszt;
 
 
 };

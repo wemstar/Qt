@@ -36,6 +36,7 @@ signals:
     void abstractRysuj(QList<QPoint>,QPixmap);
     void planszaGotowa();
     void ustawStatek(QPoint,AbstractShip::direction,int);
+    void rozpocznijGre();
 
 
 
@@ -50,11 +51,13 @@ public slots:
     void nowaGra();
     void polaczGraczy();
     void koniecWybierania();
+    void odliczanie();
 
 
 private:
     AbstractPlayer* gracz1;
     AbstractPlayer* gracz2;
+    int iloscStatkow;
 
 
     

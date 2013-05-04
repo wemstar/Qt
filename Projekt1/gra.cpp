@@ -28,6 +28,9 @@ void Gra::polaczGraczy()
 
 void Gra::koniecWybierania()
 {
+    disconnect(this,SIGNAL(ustawStatek(QPoint,AbstractShip::direction,int)),gracz1,SLOT(ustawStatek(QPoint,AbstractShip::direction,int)));
+    disconnect(gracz1,SIGNAL(narysujStatek(QList<QPoint>,QPixmap)),this,SIGNAL(abstractRysuj(QList<QPoint>,QPixmap)));
+    disconnect(gracz1,SIGNAL(narysujStatek(QList<QPoint>,QPixmap)),this,SLOT(odliczanie()));
     // przesyła sygnał z gui do gracza
     connect(this,SIGNAL(realStrzal(QPoint)),gracz1,SLOT(wykonajRuch(QPoint)));
 
@@ -44,6 +47,16 @@ void Gra::koniecWybierania()
     connect(gracz1,SIGNAL(trafienie(QPoint,bool)),this,SIGNAL(abstractHit(QPoint,bool)));
     connect(gracz2,SIGNAL(trafienie(QPoint,bool)),this,SIGNAL(realHit(QPoint,bool)));
 }
+
+void Gra::odliczanie()
+{
+    --iloscStatkow;
+    if(iloscStatkow==0)
+    {
+        koniecWybierania();
+        emit rozpocznijGre();
+    }
+}
 Gra::~Gra()
 {
     delete gracz1;
@@ -58,9 +71,11 @@ void Gra::wybierzCel(int x, int y)
 
 void Gra::nowaGra()
 {
+    iloscStatkow=10;
 
     connect(this,SIGNAL(ustawStatek(QPoint,AbstractShip::direction,int)),gracz1,SLOT(ustawStatek(QPoint,AbstractShip::direction,int)));
     connect(gracz1,SIGNAL(narysujStatek(QList<QPoint>,QPixmap)),this,SIGNAL(abstractRysuj(QList<QPoint>,QPixmap)));
+    connect(gracz1,SIGNAL(narysujStatek(QList<QPoint>,QPixmap)),this,SLOT(odliczanie()));
 
 
 

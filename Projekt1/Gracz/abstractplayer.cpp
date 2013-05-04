@@ -10,6 +10,10 @@ AbstractPlayer::AbstractPlayer(QObject* parent):QObject(parent)
 {
     connect(this,SIGNAL(narysujStatek(QList<QPoint>,QPixmap)),this,SLOT(zniczenieStatku()));
     iloscStatkow=10;
+    jednoMaszt=4;
+    dwuMaszt=3;
+    trzyMaszt=2;
+    czteroMaszt=1;
 
 
 
@@ -133,12 +137,15 @@ bool AbstractPlayer::bouncing(AbstractShip *x)
 
 void AbstractPlayer::ustawJednoMasztowiec(QPoint pkt, AbstractShip::direction dir)
 {
+    if(jednoMaszt==0)return;
     AbstractShip * x=new JednoMasztowiec(pkt,dir,this);
     if(x->isValid()&&(!bouncing(x)))
     {
         statki.append(x);
         emit narysujStatek(x->kordy(),x->obraz());
-        std::cerr<<"kurcze";
+//        std::cerr<<"kurcze";
+        --jednoMaszt;
+
 
     }
 
@@ -147,32 +154,38 @@ void AbstractPlayer::ustawJednoMasztowiec(QPoint pkt, AbstractShip::direction di
 
 void AbstractPlayer::ustawDwuMasztowiec(QPoint pkt, AbstractShip::direction dir)
 {
+    if(dwuMaszt==0)return;
     AbstractShip * x=new DwuMasztowiec(pkt,dir,this);
     if(x->isValid()&&(!bouncing(x)))
     {
         statki.append(x);
         emit narysujStatek(x->kordy(),x->obraz());
+        --dwuMaszt;
     }
 
 }
 
 void AbstractPlayer::ustawTrzyMasztowiec(QPoint pkt, AbstractShip::direction dir)
 {
+    if(trzyMaszt==0)return;
     AbstractShip * x=new TrojMasztowiec(pkt,dir,this);
     if(x->isValid()&&(!bouncing(x)))
     {
         statki.append(x);
         emit narysujStatek(x->kordy(),x->obraz());
+        --trzyMaszt;
     }
 }
 
 void AbstractPlayer::ustawCzteroMasztowiec(QPoint pkt, AbstractShip::direction dir)
 {
+    if(czteroMaszt==0)return;
     AbstractShip * x=new CzteroMasztowiec(pkt,dir,this);
     if(x->isValid()&&(!bouncing(x)))
     {
         statki.append(x);
         emit narysujStatek(x->kordy(),x->obraz());
+        --czteroMaszt;
     }
 }
 
