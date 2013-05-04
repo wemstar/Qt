@@ -37,12 +37,20 @@ private slots:
      */
     void firstPlayerMove(QPoint,bool);
 
-    void firstPlayerDrawn(QList<QPoint> punkty,QPixmap pic);
-    void secondPlayerDrawn(QList<QPoint> punkty,QPixmap pic);
+    void firstPlayerDraw(QList<QPoint> punkty,QPixmap pic);
+    void secondPlayerDraw(QList<QPoint> punkty,QPixmap pic);
 
     void on_actionNew_Game_triggered();
 
-    void isGood(QList<QPoint> punkt,QPixmap pic);
+
+    void on_actionDodaj_Jednomasztowca_triggered();
+
+    void on_actionAddTwo_funnel_triggered();
+
+    void on_actionAdd_Three_funne_triggered();
+
+    void on_actionAdd_Four_funnel_triggered();
+
 signals:
     void wybierzStatek(QPoint,AbstractShip::direction,int );
 protected:
@@ -55,6 +63,8 @@ protected:
     void zaznaczCel(QTableWidget *cel,QPoint punkt,bool traf);
     void zatopCel(QTableWidget * cel,QPoint punkt,QPixmap pic);
 private:
+    AbstractShip::direction kierunek();
+    QPoint punkt();
     Ui::GlowneOkno *ui;
     Gra *game;
 };

@@ -25,8 +25,8 @@ GlowneOkno::GlowneOkno(QWidget *parent) :
     connect(game,SIGNAL(abstractHit(QPoint,bool)),this,SLOT(secondPlayerMove(QPoint,bool)));
     connect(game,SIGNAL(realHit(QPoint,bool)),this,SLOT(firstPlayerMove(QPoint,bool)));
 
-    connect(game,SIGNAL(abstractZatonol(QList<QPoint>,QPixmap)),this,SLOT(secondPlayerDrawn(QList<QPoint>,QPixmap)));
-    connect(game,SIGNAL(realZatonol(QList<QPoint>,QPixmap)),this,SLOT(firstPlayerDrawn(QList<QPoint>,QPixmap)));
+    connect(game,SIGNAL(abstractRysuj(QList<QPoint>,QPixmap)),this,SLOT(secondPlayerDraw(QList<QPoint>,QPixmap)));
+    connect(game,SIGNAL(realRysuj(QList<QPoint>,QPixmap)),this,SLOT(firstPlayerDraw(QList<QPoint>,QPixmap)));
     ui->mainToolBar->setVisible(false);
 }
 
@@ -52,7 +52,7 @@ void GlowneOkno::firstPlayerMove(QPoint x, bool t)
 
 }
 
-void GlowneOkno::firstPlayerDrawn(QList<QPoint> punkty, QPixmap pic)
+void GlowneOkno::firstPlayerDraw(QList<QPoint> punkty, QPixmap pic)
 {
     QTableWidget* cel=ui->gracz2Table;
     foreach(QPoint punkt,punkty)
@@ -90,7 +90,21 @@ void GlowneOkno::zatopCel(QTableWidget *cel, QPoint punkt, QPixmap pic)
 
 }
 
-void GlowneOkno::secondPlayerDrawn(QList<QPoint> punkty, QPixmap pic)
+AbstractShip::direction GlowneOkno::kierunek()
+{
+    QTableWidgetSelectionRange zasieg=ui->gracz1Table->selectedRanges()[0];
+    return zasieg.columnCount()<zasieg.rowCount()? AbstractShip::RIGHT:AbstractShip::DOWN;
+}
+
+QPoint GlowneOkno::punkt()
+{
+    QTableWidgetSelectionRange zasieg=ui->gracz1Table->selectedRanges()[0];
+    return QPoint(zasieg.topRow(),zasieg.leftColumn());
+
+
+}
+
+void GlowneOkno::secondPlayerDraw(QList<QPoint> punkty, QPixmap pic)
 {
     QTableWidget* cel=ui->gracz1Table;
     foreach(QPoint punkt,punkty)
@@ -106,9 +120,35 @@ void GlowneOkno::on_actionNew_Game_triggered()
     ui->gracz1Table->setEnabled(true);
     ui->gracz2Table->setEnabled(false);
     ui->mainToolBar->setVisible(true);
+    connect(this ,SIGNAL(wybierzStatek(QPoint,AbstractShip::direction,int)),game,SIGNAL(ustawStatek(QPoint,AbstractShip::direction,int)));
+
 
 }
 
-void GlowneOkno::isGood(QList<QPoint> punkt, QPixmap pic)
+
+
+void GlowneOkno::on_actionDodaj_Jednomasztowca_triggered()
 {
+    emit wybierzStatek(punkt(),kierunek(),1);
+
+}
+
+void GlowneOkno::on_actionAddTwo_funnel_triggered()
+{
+//    std::cerr<< kierunek()<<std::endl;
+//    std::cerr<< punkt().x()<<" "<<punkt().y()<<std::endl;
+    emit wybierzStatek(punkt(),kierunek(),2);
+
+}
+
+void GlowneOkno::on_actionAdd_Three_funne_triggered()
+{
+    emit wybierzStatek(punkt(),kierunek(),3);
+
+}
+
+void GlowneOkno::on_actionAdd_Four_funnel_triggered()
+{
+    emit wybierzStatek(punkt(),kierunek(),4);
+
 }

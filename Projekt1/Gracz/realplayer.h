@@ -16,6 +16,12 @@ public slots:
  * @param QPoint
  */
     virtual void wykonajRuch(QPoint);
+
+protected:
+    void ustawJednoMasztowiec(QPoint pkt,AbstractShip::direction dir);
+    void ustawDwuMasztowiec(QPoint pkt,AbstractShip::direction dir);
+    void ustawTrzyMasztowiec(QPoint pkt,AbstractShip::direction dir);
+    void ustawCzteroMasztowiec(QPoint pkt,AbstractShip::direction dir);
 };
 
 #endif // REALPLAYER_H

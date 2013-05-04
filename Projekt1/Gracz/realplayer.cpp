@@ -13,3 +13,20 @@ void RealPlayer::wykonajRuch(QPoint p)
 
 
 }
+
+void RealPlayer::ustawJednoMasztowiec(QPoint pkt, AbstractShip::direction dir)
+{
+}
+
+void RealPlayer::ustawDwuMasztowiec(QPoint pkt, AbstractShip::direction dir)
+{
+    std::cerr<<"hura";
+}
+
+void RealPlayer::ustawTrzyMasztowiec(QPoint pkt, AbstractShip::direction dir)
+{
+}
+
+void RealPlayer::ustawCzteroMasztowiec(QPoint pkt, AbstractShip::direction dir)
+{
+}

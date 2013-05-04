@@ -8,6 +8,7 @@ Gra::Gra(QObject *parent) :
     gracz1=new RealPlayer(this);
     gracz2=new EasySi(this);
     connect(this,SIGNAL(planszaGotowa()),this,SLOT(polaczGraczy()));
+    polaczGraczy();
 
 }
 
@@ -15,7 +16,18 @@ void Gra::polaczGraczy()
 {
 
     gracz2->losujStatki();
-    gracz1->losujStatki();
+//    gracz1->losujStatki();
+
+
+
+    connect(gracz1,SIGNAL(narysujStatek(QList<QPoint>,QPixmap)),this,SIGNAL(abstractRysuj(QList<QPoint>,QPixmap)));
+    connect(gracz2,SIGNAL(narysujStatek(QList<QPoint>,QPixmap)),this,SIGNAL(realRysuj(QList<QPoint>,QPixmap)));
+    nowaGra();
+
+}
+
+void Gra::koniecWybierania()
+{
     // przesyła sygnał z gui do gracza
     connect(this,SIGNAL(realStrzal(QPoint)),gracz1,SLOT(wykonajRuch(QPoint)));
 
@@ -31,14 +43,6 @@ void Gra::polaczGraczy()
     //sygnały przekazywane do GUI
     connect(gracz1,SIGNAL(trafienie(QPoint,bool)),this,SIGNAL(abstractHit(QPoint,bool)));
     connect(gracz2,SIGNAL(trafienie(QPoint,bool)),this,SIGNAL(realHit(QPoint,bool)));
-
-    connect(gracz1,SIGNAL(zatonol(QList<QPoint>,QPixmap)),this,SIGNAL(abstractZatonol(QList<QPoint>,QPixmap)));
-    connect(gracz2,SIGNAL(zatonol(QList<QPoint>,QPixmap)),this,SIGNAL(realZatonol(QList<QPoint>,QPixmap)));
-
-}
-
-void Gra::wybierzStatki()
-{
 }
 Gra::~Gra()
 {
@@ -54,7 +58,9 @@ void Gra::wybierzCel(int x, int y)
 
 void Gra::nowaGra()
 {
-    wybierzStatki();
+
+    connect(this,SIGNAL(ustawStatek(QPoint,AbstractShip::direction,int)),gracz1,SLOT(ustawStatek(QPoint,AbstractShip::direction,int)));
+    connect(gracz1,SIGNAL(narysujStatek(QList<QPoint>,QPixmap)),this,SIGNAL(abstractRysuj(QList<QPoint>,QPixmap)));
 
 
 

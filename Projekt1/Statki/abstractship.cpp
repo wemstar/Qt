@@ -56,6 +56,16 @@ bool AbstractShip::isValid()
     return true;
 }
 
+QList<QPoint> AbstractShip::kordy()
+{
+    return pozycja.keys();
+}
+
+QPixmap AbstractShip::obraz()
+{
+    return obrazek;
+}
+
 void AbstractShip::setPosition(QPoint poz, AbstractShip::direction dir)
 {
 

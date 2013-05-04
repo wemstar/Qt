@@ -36,6 +36,7 @@ public slots:
      */
     void isHit(QPoint x,bool traf);
     void zniczenieStatku();
+    void ustawStatek(QPoint,AbstractShip::direction,int);
 
 
 
@@ -51,10 +52,17 @@ signals:
      * @param bool  czy pod punktem zanjdował się statek
      */
     void trafienie(QPoint,bool);
-    void zatonol(QList<QPoint>,QPixmap);
+    void narysujStatek(QList<QPoint>,QPixmap);
     void przegrana();
 
 protected:
+     void ustawJednoMasztowiec(QPoint pkt,AbstractShip::direction dir);
+     void ustawDwuMasztowiec(QPoint pkt,AbstractShip::direction dir);
+     void ustawTrzyMasztowiec(QPoint pkt,AbstractShip::direction dir);
+     void ustawCzteroMasztowiec(QPoint pkt,AbstractShip::direction dir);
+
+    bool bouncing(int i=0);
+    bool bouncing(AbstractShip*);
 
     /**
      * tablica zawierająca trafione punkty oraz ich wartośc logiczną

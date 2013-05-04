@@ -32,9 +32,11 @@ signals:
      */
     void realHit(QPoint,bool);
 
-    void realZatonol(QList<QPoint>,QPixmap);
-    void abstractZatonol(QList<QPoint>,QPixmap);
+    void realRysuj(QList<QPoint>,QPixmap);
+    void abstractRysuj(QList<QPoint>,QPixmap);
     void planszaGotowa();
+    void ustawStatek(QPoint,AbstractShip::direction,int);
+
 
 
     
@@ -47,7 +49,8 @@ public slots:
     void wybierzCel(int x,int y);
     void nowaGra();
     void polaczGraczy();
-    void wybierzStatki();
+    void koniecWybierania();
+
 
 private:
     AbstractPlayer* gracz1;

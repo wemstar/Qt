@@ -16,6 +16,8 @@ public:
     virtual bool isHit(QPoint);
     static bool isBouncing(const AbstractShip& a, const AbstractShip& b);
     bool isValid();
+    QList<QPoint> kordy();
+    QPixmap obraz();
 
     
 signals:
