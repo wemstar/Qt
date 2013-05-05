@@ -21,6 +21,7 @@ void Koleczka::setRadius(int rad)
 void Koleczka::wyczysc()
 {
     img=QImage(QSize(1024,1024),QImage::Format_ARGB32);
+    repaint();
 }
 
 void Koleczka::paintEvent(QPaintEvent *)

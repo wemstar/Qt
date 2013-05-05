@@ -8,6 +8,7 @@ Widget::Widget(QWidget *parent) :
     ui->setupUi(this);
     connect(this,SIGNAL(zmianaKoloru(QColor)),ui->paintWidget,SLOT(setColor(QColor)));
     connect(this,SIGNAL(zmianaPromienia(int)),ui->paintWidget,SLOT(setRadius(int)));
+    connect(ui->clearButton,SIGNAL(clicked()),ui->paintWidget,SLOT(wyczysc()));
     emit zmianaKoloru(Qt::blue);
     emit zmianaPromienia(ui->radiusDial->value());
 
