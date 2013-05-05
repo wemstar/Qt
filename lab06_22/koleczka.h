@@ -20,8 +20,8 @@ protected:
     void mousePressEvent(QMouseEvent *);
     QColor color;
     int radius;
-    QImage img;
-    QPoint punkt;
+    QPixmap img;
+//    QPixm punkt;
 
     
 };

@@ -23,10 +23,18 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QDial" name="radiusDial"/>
+         <widget class="QDial" name="radiusDial">
+          <property name="value">
+           <number>5</number>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="radiusSpin"/>
+         <widget class="QSpinBox" name="radiusSpin">
+          <property name="value">
+           <number>5</number>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -41,6 +49,9 @@
          <widget class="QRadioButton" name="red">
           <property name="text">
            <string>Red</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
           </property>
          </widget>
         </item>

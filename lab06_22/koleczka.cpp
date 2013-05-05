@@ -5,7 +5,8 @@
 Koleczka::Koleczka(QWidget *parent) :
     QWidget(parent)
 {
-    img=QImage(QSize(1024,1024),QImage::Format_ARGB32);
+    img=QPixmap(QSize(1024,1024));
+    img.fill();
 }
 
 void Koleczka::setColor(QColor col)
@@ -20,7 +21,7 @@ void Koleczka::setRadius(int rad)
 
 void Koleczka::wyczysc()
 {
-    img=QImage(QSize(1024,1024),QImage::Format_ARGB32);
+   img.fill();
     repaint();
 }
 
@@ -28,13 +29,15 @@ void Koleczka::paintEvent(QPaintEvent *)
 {
 
     QPainter widgetPainter(this);
-    widgetPainter.drawImage(0,0,img);
+    widgetPainter.drawPixmap(0,0,size().width(),size().height(),img);
 }
 
 void Koleczka::mousePressEvent(QMouseEvent * ev)
 {
+    img=img.scaled(size());
     QPainter paintImg(&img);
     paintImg.initFrom(this);
+
     paintImg.setPen(QPen(color));
     paintImg.drawEllipse(ev->pos(),radius,radius);
     paintImg.end();
