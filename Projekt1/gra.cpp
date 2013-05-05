@@ -46,6 +46,12 @@ void Gra::koniecWybierania()
     //sygnały przekazywane do GUI
     connect(gracz1,SIGNAL(trafienie(QPoint,bool)),this,SIGNAL(abstractHit(QPoint,bool)));
     connect(gracz2,SIGNAL(trafienie(QPoint,bool)),this,SIGNAL(realHit(QPoint,bool)));
+
+    connect(gracz1,SIGNAL(przegrana()),this,SIGNAL(przegranaGracza1()));
+    connect(gracz2,SIGNAL(przegrana()),this,SIGNAL(przegranaGracza2()));
+
+    connect(gracz1,SIGNAL(narysujStatek(QList<QPoint>,QPixmap)),gracz1,SLOT(zniczenieStatku()));
+    connect(gracz2,SIGNAL(narysujStatek(QList<QPoint>,QPixmap)),gracz2,SLOT(zniczenieStatku()));
 }
 
 void Gra::odliczanie()
@@ -57,6 +63,8 @@ void Gra::odliczanie()
         emit rozpocznijGre();
     }
 }
+
+
 Gra::~Gra()
 {
     delete gracz1;

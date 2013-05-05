@@ -66,6 +66,12 @@ QPixmap AbstractShip::obraz()
     return obrazek;
 }
 
+bool AbstractShip::zniszczony()
+{
+    if(pozycja.keys(true).isEmpty())return true;
+    return false;
+}
+
 void AbstractShip::setPosition(QPoint poz, AbstractShip::direction dir)
 {
 

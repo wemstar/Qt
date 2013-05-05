@@ -18,10 +18,12 @@ public:
     bool isValid();
     QList<QPoint> kordy();
     QPixmap obraz();
+    bool zniszczony();
 
     
 signals:
     void zatonol(QList<QPoint>,QPixmap);
+
     
 public slots:
     void setPosition(QPoint poz,direction dir);

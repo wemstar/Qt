@@ -8,7 +8,7 @@
 
 AbstractPlayer::AbstractPlayer(QObject* parent):QObject(parent)
 {
-    connect(this,SIGNAL(narysujStatek(QList<QPoint>,QPixmap)),this,SLOT(zniczenieStatku()));
+
     iloscStatkow=10;
     jednoMaszt=4;
     dwuMaszt=3;
@@ -40,8 +40,16 @@ void AbstractPlayer::isHit(QPoint x, bool traf)
 
 void AbstractPlayer::zniczenieStatku()
 {
-    --iloscStatkow;
-    if(iloscStatkow==0)emit przegrana();
+    int zniszcz=0;
+    foreach(AbstractShip* x,statki)
+    {
+        if(x->zniszczony())++zniszcz;
+    }
+
+    if(iloscStatkow==zniszcz)
+    {emit przegrana();
+        std::cerr<<"zniszcz";
+    }
 }
 
 void AbstractPlayer::ustawStatek(QPoint pkt, AbstractShip::direction dir, int ma)

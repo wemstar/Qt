@@ -7,7 +7,7 @@ GlowneOkno::GlowneOkno(QWidget *parent) :
     ui(new Ui::GlowneOkno)
 {
     ui->setupUi(this);
-    game= new Gra();
+
     //ustawienai dla tabeli 1
 
     ui->gracz1Table->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
@@ -21,8 +21,6 @@ GlowneOkno::GlowneOkno(QWidget *parent) :
     ui->gracz2Table->setMinimumSize(400,400);
     ui->gracz2Table->setEnabled(false);
 
-    connect(game,SIGNAL(abstractRysuj(QList<QPoint>,QPixmap)),this,SLOT(secondPlayerDraw(QList<QPoint>,QPixmap)));
-    connect(game,SIGNAL(realRysuj(QList<QPoint>,QPixmap)),this,SLOT(firstPlayerDraw(QList<QPoint>,QPixmap)));
 
 
     ui->mainToolBar->setVisible(false);
@@ -37,6 +35,8 @@ void GlowneOkno::rozpocznijGre()
     ui->gracz1Table->setEnabled(false);
     ui->gracz2Table->setEnabled(true);
 }
+
+
 
 GlowneOkno::~GlowneOkno()
 {
@@ -125,11 +125,19 @@ void GlowneOkno::secondPlayerDraw(QList<QPoint> punkty, QPixmap pic)
 
 void GlowneOkno::on_actionNew_Game_triggered()
 {
+    ui->gracz1Table->clear();
+    ui->gracz2Table->clear();
     ui->gracz1Table->setEnabled(true);
     ui->gracz2Table->setEnabled(false);
     ui->mainToolBar->setVisible(true);
+    game= new Gra();
+    connect(game,SIGNAL(abstractRysuj(QList<QPoint>,QPixmap)),this,SLOT(secondPlayerDraw(QList<QPoint>,QPixmap)));
+    connect(game,SIGNAL(realRysuj(QList<QPoint>,QPixmap)),this,SLOT(firstPlayerDraw(QList<QPoint>,QPixmap)));
+
     connect(this ,SIGNAL(wybierzStatek(QPoint,AbstractShip::direction,int)),game,SIGNAL(ustawStatek(QPoint,AbstractShip::direction,int)));
     connect(game,SIGNAL(rozpocznijGre()),this,SLOT(rozpocznijGre()));
+    connect(game,SIGNAL(przegranaGracza1()),this,SLOT(przegralGracz1()));
+    connect(game,SIGNAL(przegranaGracza2()),this,SLOT(przegralGracz2()));
 
 
 }
@@ -159,5 +167,18 @@ void GlowneOkno::on_actionAdd_Three_funne_triggered()
 void GlowneOkno::on_actionAdd_Four_funnel_triggered()
 {
     emit wybierzStatek(punkt(),kierunek(),4);
+
+}
+
+void GlowneOkno::przegralGracz1()
+{
+    QMessageBox::information(this,QString(tr("Winner")),QString(tr("Player 2 win")));
+    ui->gracz2Table->setEnabled(false);
+
+}
+void GlowneOkno::przegralGracz2()
+{
+    QMessageBox::information(this,QString(tr("Winner")),QString(tr("Player 1 win")));
+    ui->gracz2Table->setEnabled(false);
 
 }

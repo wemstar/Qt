@@ -37,6 +37,8 @@ signals:
     void planszaGotowa();
     void ustawStatek(QPoint,AbstractShip::direction,int);
     void rozpocznijGre();
+    void przegranaGracza1();
+    void przegranaGracza2();
 
 
 
@@ -52,6 +54,7 @@ public slots:
     void polaczGraczy();
     void koniecWybierania();
     void odliczanie();
+
 
 
 private:

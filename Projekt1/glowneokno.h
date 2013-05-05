@@ -51,6 +51,9 @@ private slots:
 
     void on_actionAdd_Four_funnel_triggered();
     void rozpocznijGre();
+    void przegralGracz2();
+    void przegralGracz1();
+
 
 signals:
     void wybierzStatek(QPoint,AbstractShip::direction,int );
