@@ -16,8 +16,6 @@ SOURCES += main.cpp\
         glowneokno.cpp \
     Gracz/easysi.cpp \
     Gracz/abstractplayer.cpp \
-    Widgety/newgamewidget.cpp \
-    Widgety/polestatki.cpp \
     Statki/abstractship.cpp \
     Gracz/realplayer.cpp \
     gra.cpp \
@@ -29,8 +27,6 @@ SOURCES += main.cpp\
 HEADERS  += glowneokno.h \
     Gracz/easysi.h \
     Gracz/abstractplayer.h \
-    Widgety/newgamewidget.h \
-    Widgety/polestatki.h \
     Statki/abstractship.h \
     Gracz/abstractplayer.h \
     Gracz/realplayer.h \
