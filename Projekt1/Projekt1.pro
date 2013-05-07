@@ -37,9 +37,7 @@ HEADERS  += glowneokno.h \
     Statki/trojmasztowiec.h \
     Statki/czteromasztowiec.h
 
-FORMS    += glowneokno.ui \
-    Widgety/newgamewidget.ui \
-    Widgety/polestatki.ui
+FORMS    += glowneokno.ui
 
 RESOURCES += \
     zasoby.qrc
