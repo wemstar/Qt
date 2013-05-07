@@ -48,7 +48,7 @@ void AbstractPlayer::zniczenieStatku()
 
     if(iloscStatkow==zniszcz)
     {emit przegrana();
-        std::cerr<<"zniszcz";
+//        std::cerr<<"zniszcz";
     }
 }
 

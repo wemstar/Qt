@@ -12,8 +12,7 @@ class AbstractPlayer:public QObject
     Q_OBJECT
 public:
     AbstractPlayer(QObject* parent=0);
-    void losujStatki();
-
+    
 
 
 
@@ -35,7 +34,20 @@ public slots:
      * @param traf czy został trafiony
      */
     void isHit(QPoint x,bool traf);
+    /**
+     * funkcja losuje statki
+     */
+    void losujStatki();
+    /**
+     * funkcja zmniejsza ilość pozostałych statków
+     */
     void zniczenieStatku();
+    /**
+     * ustawia statek na wybrane położenie
+     * @param QPoint                  początek statku
+     * @param AbstractShip::direction kierunek
+     * @param int                     liczba masztów
+     */
     void ustawStatek(QPoint,AbstractShip::direction,int);
 
 
@@ -53,15 +65,46 @@ signals:
      */
     void trafienie(QPoint,bool);
     void narysujStatek(QList<QPoint>,QPixmap);
+    /**
+     * sygnalizuje przegraną gracza
+     */
     void przegrana();
 
 protected:
+    /**
+     * ustawia   jednomasztowca       
+     * @param pkt punkt początku statku
+     * @param dir ilosć masztów
+     */
      void ustawJednoMasztowiec(QPoint pkt,AbstractShip::direction dir);
+     /**
+      * ustawia    dwumasztowca         
+      * @param pkt punkt początku statku
+      * @param dir ilosć masztów
+      */
      void ustawDwuMasztowiec(QPoint pkt,AbstractShip::direction dir);
-     void ustawTrzyMasztowiec(QPoint pkt,AbstractShip::direction dir);
+     /**
+      * ustawia     trójmasztowca        
+      * @param pkt punkt początku statku
+      * @param dir ilosć masztów
+      */
+     void ustawTrzyMasztowiec(QPoint pkt,AbstractShip::direction dir); 
+     /**
+      * ustawia    czteromasztowca         
+      * @param pkt punkt początku statku
+      * @param dir ilosć masztów
+      */
      void ustawCzteroMasztowiec(QPoint pkt,AbstractShip::direction dir);
-
+     /**
+      * czy staki obecne w graczu stykają się
+      * @param  i ilosć statków
+      * @return   czy stykają się
+      */
     bool bouncing(int i=0);
+    /**
+     *  czy statek bedzie się stykał
+     */
+
     bool bouncing(AbstractShip*);
 
     /**
