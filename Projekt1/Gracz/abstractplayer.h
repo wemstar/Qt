@@ -12,6 +12,7 @@ class AbstractPlayer:public QObject
     Q_OBJECT
 public:
     AbstractPlayer(QObject* parent=0);
+    QList<AbstractShip*>getStatki();
     
 
 
@@ -114,7 +115,7 @@ protected:
     /**
      * tablica zawiera statki
      */
-    QVector<AbstractShip*> statki;
+    QList<AbstractShip*> statki;
     int iloscStatkow;
     int jednoMaszt;
     int dwuMaszt;

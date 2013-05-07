@@ -182,3 +182,9 @@ void GlowneOkno::przegralGracz2()
     ui->gracz2Table->setEnabled(false);
 
 }
+
+void GlowneOkno::on_actionSave_Game_triggered()
+{
+    QString filename=QFileDialog::getSaveFileName(this,tr("Save Game"),QString(),tr("XML files(*.xml)"));
+    game->zapiszGre(filename);
+}

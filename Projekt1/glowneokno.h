@@ -84,6 +84,8 @@ private slots:
     void przegralGracz1();
 
 
+    void on_actionSave_Game_triggered();
+
 signals:
 /**
  * sygnal wysyłany po nacisnięciu akcji dodącej statek

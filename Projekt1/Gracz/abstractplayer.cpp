@@ -19,6 +19,11 @@ AbstractPlayer::AbstractPlayer(QObject* parent):QObject(parent)
 
 
 }
+
+QList<AbstractShip *> AbstractPlayer::getStatki()
+{
+    return statki;
+}
 void AbstractPlayer::uderzenie(QPoint x )
 {
     bool traf=false;

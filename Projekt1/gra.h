@@ -102,7 +102,9 @@ public slots:
      * odlicza ilość statków do startu gry
      */
     void odliczanie();
-
+    void zapiszGre(QString filename);
+    void zapiszGracza(QXmlStreamWriter*,AbstractPlayer*);
+    void zapiszStatek(QXmlStreamWriter*,AbstractShip*);
 
 
 private:
