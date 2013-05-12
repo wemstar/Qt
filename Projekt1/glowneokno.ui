@@ -278,14 +278,14 @@
      <string>Game</string>
     </property>
     <addaction name="actionNew_Game"/>
-    <addaction name="actionLoadGame"/>
-    <addaction name="actionSave_Game"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuO_grze">
     <property name="title">
      <string>About</string>
     </property>
+    <addaction name="actionAbout_QT"/>
+    <addaction name="actionAbout_Game"/>
    </widget>
    <addaction name="menuGra"/>
    <addaction name="menuO_grze"/>
@@ -313,42 +313,6 @@
    </property>
    <property name="toolTip">
     <string> Start new game</string>
-   </property>
-  </action>
-  <action name="actionLoadGame">
-   <property name="icon">
-    <iconset resource="zasoby.qrc">
-     <normaloff>:/new/akcje/Icony/actions/document-open.svg</normaloff>:/new/akcje/Icony/actions/document-open.svg</iconset>
-   </property>
-   <property name="text">
-    <string>Load Game</string>
-   </property>
-   <property name="toolTip">
-    <string>Load previous game</string>
-   </property>
-  </action>
-  <action name="actionRecentGame">
-   <property name="icon">
-    <iconset resource="zasoby.qrc">
-     <normaloff>:/new/akcje/Icony/actions/document-open-recent.svg</normaloff>:/new/akcje/Icony/actions/document-open-recent.svg</iconset>
-   </property>
-   <property name="text">
-    <string>Recent Game</string>
-   </property>
-   <property name="toolTip">
-    <string>Load recent game</string>
-   </property>
-  </action>
-  <action name="actionSave_Game">
-   <property name="icon">
-    <iconset resource="zasoby.qrc">
-     <normaloff>:/new/akcje/Icony/actions/document-save.svg</normaloff>:/new/akcje/Icony/actions/document-save.svg</iconset>
-   </property>
-   <property name="text">
-    <string>Save Game</string>
-   </property>
-   <property name="toolTip">
-    <string>Save current game</string>
    </property>
   </action>
   <action name="actionExit">
@@ -409,6 +373,16 @@
    </property>
    <property name="toolTip">
     <string>add four-funnel to map</string>
+   </property>
+  </action>
+  <action name="actionAbout_QT">
+   <property name="text">
+    <string>About QT</string>
+   </property>
+  </action>
+  <action name="actionAbout_Game">
+   <property name="text">
+    <string>About Game</string>
    </property>
   </action>
  </widget>

@@ -14,12 +14,15 @@ GlowneOkno::GlowneOkno(QWidget *parent) :
     ui->gracz1Table->verticalHeader()->setResizeMode(QHeaderView::Stretch);
     ui->gracz1Table->setMinimumSize(400,400);
     ui->gracz1Table->setEnabled(false);
+    ui->gracz1Table->setSelectionMode(QAbstractItemView::ContiguousSelection);
+
 //    ustawienia dla tabeli 2
 
     ui->gracz2Table->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
     ui->gracz2Table->verticalHeader()->setResizeMode(QHeaderView::Stretch);
     ui->gracz2Table->setMinimumSize(400,400);
     ui->gracz2Table->setEnabled(false);
+    ui->gracz2Table->setSelectionMode(QAbstractItemView::SingleSelection);
 
 
 
@@ -34,6 +37,7 @@ void GlowneOkno::rozpocznijGre()
 
     ui->gracz1Table->setEnabled(false);
     ui->gracz2Table->setEnabled(true);
+    ui->mainToolBar->setVisible(false);
 }
 
 
@@ -183,8 +187,19 @@ void GlowneOkno::przegralGracz2()
 
 }
 
-void GlowneOkno::on_actionSave_Game_triggered()
+
+
+void GlowneOkno::on_actionAbout_QT_triggered()
 {
-    QString filename=QFileDialog::getSaveFileName(this,tr("Save Game"),QString(),tr("XML files(*.xml)"));
-    game->zapiszGre(filename);
+    QMessageBox::aboutQt(this);
+}
+
+void GlowneOkno::on_actionAbout_Game_triggered()
+{
+    QMessageBox::about(this,QString(tr("Ships")),QString(tr("To  start game choose new game in menu and then place ships ")));
+}
+
+void GlowneOkno::on_actionExit_triggered()
+{
+    this->close();
 }

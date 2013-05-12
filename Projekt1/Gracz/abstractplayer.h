@@ -53,6 +53,7 @@ public slots:
 
 
 
+
 signals:
    /**
     * wysyła do innego gracza punkt
@@ -65,11 +66,13 @@ signals:
      * @param bool  czy pod punktem zanjdował się statek
      */
     void trafienie(QPoint,bool);
+    
     void narysujStatek(QList<QPoint>,QPixmap);
     /**
      * sygnalizuje przegraną gracza
      */
     void przegrana();
+
 
 protected:
     /**

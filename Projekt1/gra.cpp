@@ -64,54 +64,7 @@ void Gra::odliczanie()
     }
 }
 
-void Gra::zapiszGre(QString filename)
-{
-    QFile file(filename);
-    if(file.open(QFile::WriteOnly|QFile::Text))
-    {
 
-    }
-    QXmlStreamWriter xmlWriter(&file);
-    xmlWriter.setAutoFormatting(true);
-    xmlWriter.writeStartDocument();
-    xmlWriter.writeStartElement("gra");
-    zapiszGracza(&xmlWriter,gracz1);
-    zapiszGracza(&xmlWriter,gracz2);
-    xmlWriter.writeEndDocument();
-    file.close();
-
-
-}
-
-void Gra::zapiszGracza(QXmlStreamWriter *xmlWriter, AbstractPlayer * gracz)
-{
-    xmlWriter->writeStartElement("Gracz");
-    foreach(AbstractShip* statek,gracz->getStatki())
-    {
-        zapiszStatek(xmlWriter,statek);
-        std::cerr<< statek->objectName().toStdString()<<"cos";
-    }
-    xmlWriter->writeEndElement();
-
-
-}
-
-void Gra::zapiszStatek(QXmlStreamWriter *xmlWriter, AbstractShip * statek)
-{
-    xmlWriter->writeStartElement("Statek");
-    QList<QPoint> punkty=statek->kordy();
-//    std::cerr<<QString(punkty[2].x()).toStdString();
-    foreach(QPoint pkt, punkty)
-    {
-//        std::cerr<<QString("5").toStdString();
-        xmlWriter->writeStartElement("punkt");
-        xmlWriter->writeTextElement("x",QString(pkt.x()));
-        xmlWriter->writeTextElement("y",QString(pkt.y()));
-        xmlWriter->writeEndElement();
-    }
-    xmlWriter->writeEndElement();
-
-}
 
 
 Gra::~Gra()

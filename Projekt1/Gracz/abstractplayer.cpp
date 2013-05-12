@@ -54,6 +54,7 @@ void AbstractPlayer::zniczenieStatku()
     if(iloscStatkow==zniszcz)
     {emit przegrana();
 //        std::cerr<<"zniszcz";
+        disconnect(this,SIGNAL(narysujStatek(QList<QPoint>,QPixmap)),this,SLOT(zniczenieStatku()));
     }
 }
 
@@ -201,6 +202,8 @@ void AbstractPlayer::ustawCzteroMasztowiec(QPoint pkt, AbstractShip::direction d
         --czteroMaszt;
     }
 }
+
+
 
 
 

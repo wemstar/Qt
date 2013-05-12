@@ -10,7 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Projekt1
 TEMPLATE = app
-
+TRANSLATIONS +=statkipl_PL.ts
 
 SOURCES += main.cpp\
         glowneokno.cpp \

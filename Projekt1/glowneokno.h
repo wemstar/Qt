@@ -84,7 +84,13 @@ private slots:
     void przegralGracz1();
 
 
-    void on_actionSave_Game_triggered();
+
+
+    void on_actionAbout_QT_triggered();
+
+    void on_actionAbout_Game_triggered();
+
+    void on_actionExit_triggered();
 
 signals:
 /**

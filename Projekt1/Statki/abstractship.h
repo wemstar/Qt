@@ -56,10 +56,11 @@ public:
     bool zniszczony();
 
     
-    /**
-     *  
-     */
+    
 signals:
+    /**
+     *  sygnalizuje zatoniecie statku
+     */
     void zatonol(QList<QPoint>,QPixmap);
 
     
