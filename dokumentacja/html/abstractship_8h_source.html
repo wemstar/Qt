@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Gra w Statki: Plik źródłowy /home/wemstar/GUI/Projekt1/Statki/abstractship.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  <td id="projectlogo"><img alt="Logo" src="TrzyMasztowiec.svg"/></td>
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Gra w Statki
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Wygenerowano przez Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">/home/wemstar/GUI/Projekt1/Statki/abstractship.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef ABSTRACTSHIP_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define ABSTRACTSHIP_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QObject&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;QtCore&gt;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;QtGui&gt;</span>
+<a name="l00010"></a><a class="code" href="class_abstract_ship.html">00010</a> <span class="keyword">class </span><a class="code" href="class_abstract_ship.html">AbstractShip</a>:<span class="keyword">public</span> QObject
+<a name="l00011"></a>00011 {
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014     Q_OBJECT
+<a name="l00015"></a>00015 <span class="keyword">public</span>:
+<a name="l00016"></a>00016     <span class="keyword">enum</span> direction {RIGHT,DOWN};
+<a name="l00024"></a>00024     <span class="keyword">explicit</span> <a class="code" href="class_abstract_ship.html#ae166b2c94dcc01180a06f199e80c6788">AbstractShip</a>(QPoint poz,direction dir,<span class="keywordtype">int</span> il,QObject* parent=0);
+<a name="l00030"></a>00030     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_abstract_ship.html#ab66ce39d35b8b061528c874c4d32b54d">isHit</a>(QPoint);
+<a name="l00037"></a>00037     <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_abstract_ship.html#adfe443a1737615e1a5250ddc03b53a5f">isBouncing</a>(<span class="keyword">const</span> <a class="code" href="class_abstract_ship.html">AbstractShip</a>&amp; a, <span class="keyword">const</span> <a class="code" href="class_abstract_ship.html">AbstractShip</a>&amp; b);
+<a name="l00042"></a>00042     <span class="keywordtype">bool</span> <a class="code" href="class_abstract_ship.html#a2decaf467727504a417cd50810c43faf">isValid</a>();
+<a name="l00046"></a>00046     QList&lt;QPoint&gt; <a class="code" href="class_abstract_ship.html#acb4b273d81e7f173540a8d0f020b2159">kordy</a>();
+<a name="l00051"></a>00051     QPixmap <a class="code" href="class_abstract_ship.html#a13be92354f8bfa4f19470ccd72cd31c7">obraz</a>();
+<a name="l00056"></a>00056     <span class="keywordtype">bool</span> <a class="code" href="class_abstract_ship.html#ac425648fae323ab1ed47aa24b4838da4">zniszczony</a>();
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058     
+<a name="l00062"></a>00062 signals:
+<a name="l00063"></a>00063     <span class="keywordtype">void</span> zatonol(QList&lt;QPoint&gt;,QPixmap);
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     
+<a name="l00066"></a>00066 <span class="keyword">public</span> slots:
+<a name="l00072"></a>00072     <span class="keywordtype">void</span> <a class="code" href="class_abstract_ship.html#a9bc4b7a553519747bd1ac7c15633450f">setPosition</a>(QPoint poz,direction dir);
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074 <span class="keyword">protected</span>:
+<a name="l00075"></a>00075 <span class="comment">//    QHash&lt;QPoint,bool&gt;&amp; punktyStatku();</span>
+<a name="l00076"></a>00076     QHash&lt;QPoint,bool&gt; pozycja;
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078     QPixmap obrazek;
+<a name="l00079"></a>00079     <span class="keywordtype">int</span> ilosc_pol;
+<a name="l00080"></a>00080     
+<a name="l00081"></a>00081 };
+<a name="l00087"></a>00087 <span class="keyword">inline</span> uint qHash(<span class="keyword">const</span> QPoint&amp; p)
+<a name="l00088"></a>00088 {
+<a name="l00089"></a>00089     <span class="keywordflow">return</span> qHash(p.x()*13*p.y());
+<a name="l00090"></a>00090 }
+<a name="l00091"></a>00091 
+<a name="l00098"></a>00098 <span class="keyword">inline</span> <span class="keywordtype">double</span> distance(QPoint a,QPoint b)
+<a name="l00099"></a>00099 {
+<a name="l00100"></a>00100     <span class="keywordflow">return</span> sqrt(pow(a.x()-b.x(),2)+pow(a.y()-b.y(),2));
+<a name="l00101"></a>00101 }
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104 <span class="preprocessor">#endif // ABSTRACTSHIP_H</span>
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Zmienne</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Sun May 12 2013 19:25:21 dla Gra w Statki programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

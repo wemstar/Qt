@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Gra w Statki: Dokumentacja klasy AbstractPlayer</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  <td id="projectlogo"><img alt="Logo" src="TrzyMasztowiec.svg"/></td>
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Gra w Statki
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Wygenerowano przez Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klasy</span></a></li>
+      <li><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;klas</span></a></li>
+      <li><a href="classes.html"><span>Indeks&#160;klas</span></a></li>
+      <li><a href="inherits.html"><span>Hierarchia&#160;klas</span></a></li>
+      <li><a href="functions.html"><span>Składowe&#160;klas</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Sloty publiczne</a> &#124;
+<a href="#signals">Sygnały</a> &#124;
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pro-methods">Metody chronione</a> &#124;
+<a href="#pro-attribs">Atrybuty chronione</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja klasy AbstractPlayer</div>  </div>
+</div><!--header-->
+<div class="contents">
+<!-- doxytag: class="AbstractPlayer" -->
+<p><code>#include &lt;<a class="el" href="abstractplayer_8h_source.html">abstractplayer.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla AbstractPlayer</div>
+<div class="dyncontent">
+<div class="center"><img src="class_abstract_player__inherit__graph.png" border="0" usemap="#_abstract_player_inherit__map" alt="Inheritance graph"/></div>
+<map name="_abstract_player_inherit__map" id="_abstract_player_inherit__map">
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
+
+<p><a href="class_abstract_player-members.html">Lista wszystkich składowych.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-slots"></a>
+Sloty publiczne</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#a5155ad97e80154fe719d477d09417c09">uderzenie</a> (QPoint)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#ab40efc1808f154bc8c1fcc4440cd775a">wykonajRuch</a> (QPoint)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#a6ded1b245cc9b6efa6a38b77aa8c6fe2">isHit</a> (QPoint x, bool traf)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#ae9cea055978092e33228410a45158b32">losujStatki</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#a1afba7289199d5cddb6f12b764991b39">zniczenieStatku</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#a571529ef166fa0b1d3780c12cdaf5c9e">ustawStatek</a> (QPoint, AbstractShip::direction, int)</td></tr>
+<tr><td colspan="2"><h2><a name="signals"></a>
+Sygnały</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#a076e8b65b399e7198872455019f434e2">strzel</a> (QPoint)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#a7568969f8ec5c5d3f0bf98eae767862e">trafienie</a> (QPoint, bool)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1249b4583a0f2ad3cd31aca7db0032c1"></a><!-- doxytag: member="AbstractPlayer::narysujStatek" ref="a1249b4583a0f2ad3cd31aca7db0032c1" args="(QList&lt; QPoint &gt;, QPixmap)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>narysujStatek</b> (QList&lt; QPoint &gt;, QPixmap)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#ae40523af433be7de269076dafccadd84">przegrana</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aebdaafc74a33d7cd7d6a89f743e7f6cb"></a><!-- doxytag: member="AbstractPlayer::AbstractPlayer" ref="aebdaafc74a33d7cd7d6a89f743e7f6cb" args="(QObject *parent=0)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><b>AbstractPlayer</b> (QObject *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab0eede4061353c63b05f05caa909a45"></a><!-- doxytag: member="AbstractPlayer::getStatki" ref="aab0eede4061353c63b05f05caa909a45" args="()" -->
+QList&lt; <a class="el" href="class_abstract_ship.html">AbstractShip</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getStatki</b> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Metody chronione</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#aaf7612e980f4b88b08d36696093f23cc">ustawJednoMasztowiec</a> (QPoint pkt, AbstractShip::direction dir)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#ab464c2ceb9ebc27fcc5fe9c72420a9f1">ustawDwuMasztowiec</a> (QPoint pkt, AbstractShip::direction dir)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#a79ea7944446cff82cf3eb3707e78a9b1">ustawTrzyMasztowiec</a> (QPoint pkt, AbstractShip::direction dir)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#af2ec8687e70ac31980e8b7ea0d2f69e1">ustawCzteroMasztowiec</a> (QPoint pkt, AbstractShip::direction dir)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#a65e8adfd4cc5a74abdf30c0b904df8ab">bouncing</a> (int i=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#a94b772e8c0b8c2f4f22e95634dce0538">bouncing</a> (<a class="el" href="class_abstract_ship.html">AbstractShip</a> *)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Atrybuty chronione</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QHash&lt; QPoint, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#a340588f03f7e55d502d2c16a052745f0">trafione</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_abstract_ship.html">AbstractShip</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_player.html#a159257130643a8599db6262c8bec6933">statki</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1256c5ec86260dc435748207833ba56"></a><!-- doxytag: member="AbstractPlayer::iloscStatkow" ref="ae1256c5ec86260dc435748207833ba56" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>iloscStatkow</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad5a10831f64603a519b851abeb6fccca"></a><!-- doxytag: member="AbstractPlayer::jednoMaszt" ref="ad5a10831f64603a519b851abeb6fccca" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>jednoMaszt</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f55cf152ffd104028f88c6f8ea87a1b"></a><!-- doxytag: member="AbstractPlayer::dwuMaszt" ref="a9f55cf152ffd104028f88c6f8ea87a1b" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>dwuMaszt</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75e1dd802d6fe4e28649988000340573"></a><!-- doxytag: member="AbstractPlayer::trzyMaszt" ref="a75e1dd802d6fe4e28649988000340573" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>trzyMaszt</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad5d269aa8c56b504adec4926c2d58c53"></a><!-- doxytag: member="AbstractPlayer::czteroMaszt" ref="ad5d269aa8c56b504adec4926c2d58c53" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>czteroMaszt</b></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Opis szczegółowy</h2>
+<div class="textblock"><p>Klasa reprezentuje abstrakcyjnego gracza </p>
+</div><hr/><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" id="a65e8adfd4cc5a74abdf30c0b904df8ab"></a><!-- doxytag: member="AbstractPlayer::bouncing" ref="a65e8adfd4cc5a74abdf30c0b904df8ab" args="(int i=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_abstract_player.html#a65e8adfd4cc5a74abdf30c0b904df8ab">AbstractPlayer::bouncing</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em> = <code>0</code></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>czy staki obecne w graczu stykają się </p>
+<dl class="params"><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>ilosć statków </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Zwraca:</b></dt><dd>czy stykają się </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a94b772e8c0b8c2f4f22e95634dce0538"></a><!-- doxytag: member="AbstractPlayer::bouncing" ref="a94b772e8c0b8c2f4f22e95634dce0538" args="(AbstractShip *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_abstract_player.html#a65e8adfd4cc5a74abdf30c0b904df8ab">AbstractPlayer::bouncing</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_ship.html">AbstractShip</a> *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>czy statek bedzie się stykał </p>
+
+</div>
+</div>
+<a class="anchor" id="a6ded1b245cc9b6efa6a38b77aa8c6fe2"></a><!-- doxytag: member="AbstractPlayer::isHit" ref="a6ded1b245cc9b6efa6a38b77aa8c6fe2" args="(QPoint x, bool traf)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_abstract_player.html#a6ded1b245cc9b6efa6a38b77aa8c6fe2">AbstractPlayer::isHit</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>traf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>przypisuje do tablicy celów czy statek został trafiony </p>
+<dl class="params"><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>trafiony punkt </td></tr>
+    <tr><td class="paramname">traf</td><td>czy został trafiony </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae9cea055978092e33228410a45158b32"></a><!-- doxytag: member="AbstractPlayer::losujStatki" ref="ae9cea055978092e33228410a45158b32" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_abstract_player.html#ae9cea055978092e33228410a45158b32">AbstractPlayer::losujStatki</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>funkcja losuje statki </p>
+
+</div>
+</div>
+<a class="anchor" id="ae40523af433be7de269076dafccadd84"></a><!-- doxytag: member="AbstractPlayer::przegrana" ref="ae40523af433be7de269076dafccadd84" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_abstract_player.html#ae40523af433be7de269076dafccadd84">AbstractPlayer::przegrana</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>sygnalizuje przegraną gracza </p>
+
+</div>
+</div>
+<a class="anchor" id="a076e8b65b399e7198872455019f434e2"></a><!-- doxytag: member="AbstractPlayer::strzel" ref="a076e8b65b399e7198872455019f434e2" args="(QPoint)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_abstract_player.html#a076e8b65b399e7198872455019f434e2">AbstractPlayer::strzel</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>wysyła do innego gracza punkt </p>
+<dl class="params"><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QPoint</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7568969f8ec5c5d3f0bf98eae767862e"></a><!-- doxytag: member="AbstractPlayer::trafienie" ref="a7568969f8ec5c5d3f0bf98eae767862e" args="(QPoint, bool)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_abstract_player.html#a7568969f8ec5c5d3f0bf98eae767862e">AbstractPlayer::trafienie</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>odpowiada na strzał inego gracza </p>
+<dl class="params"><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QPoint</td><td>punkt trafienia </td></tr>
+    <tr><td class="paramname">bool</td><td>czy pod punktem zanjdował się statek </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5155ad97e80154fe719d477d09417c09"></a><!-- doxytag: member="AbstractPlayer::uderzenie" ref="a5155ad97e80154fe719d477d09417c09" args="(QPoint)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_abstract_player.html#a5155ad97e80154fe719d477d09417c09">AbstractPlayer::uderzenie</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td><code> [virtual, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>przyjmuje uderzenie od innego gracza </p>
+<dl class="params"><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QPoint</td><td>punkt w który udzerzył </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af2ec8687e70ac31980e8b7ea0d2f69e1"></a><!-- doxytag: member="AbstractPlayer::ustawCzteroMasztowiec" ref="af2ec8687e70ac31980e8b7ea0d2f69e1" args="(QPoint pkt, AbstractShip::direction dir)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_abstract_player.html#af2ec8687e70ac31980e8b7ea0d2f69e1">AbstractPlayer::ustawCzteroMasztowiec</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>pkt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AbstractShip::direction&#160;</td>
+          <td class="paramname"><em>dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>ustawia czteromasztowca </p>
+<dl class="params"><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pkt</td><td>punkt początku statku </td></tr>
+    <tr><td class="paramname">dir</td><td>ilosć masztów </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab464c2ceb9ebc27fcc5fe9c72420a9f1"></a><!-- doxytag: member="AbstractPlayer::ustawDwuMasztowiec" ref="ab464c2ceb9ebc27fcc5fe9c72420a9f1" args="(QPoint pkt, AbstractShip::direction dir)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_abstract_player.html#ab464c2ceb9ebc27fcc5fe9c72420a9f1">AbstractPlayer::ustawDwuMasztowiec</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>pkt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AbstractShip::direction&#160;</td>
+          <td class="paramname"><em>dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>ustawia dwumasztowca </p>
+<dl class="params"><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pkt</td><td>punkt początku statku </td></tr>
+    <tr><td class="paramname">dir</td><td>ilosć masztów </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aaf7612e980f4b88b08d36696093f23cc"></a><!-- doxytag: member="AbstractPlayer::ustawJednoMasztowiec" ref="aaf7612e980f4b88b08d36696093f23cc" args="(QPoint pkt, AbstractShip::direction dir)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_abstract_player.html#aaf7612e980f4b88b08d36696093f23cc">AbstractPlayer::ustawJednoMasztowiec</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>pkt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AbstractShip::direction&#160;</td>
+          <td class="paramname"><em>dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>ustawia jednomasztowca </p>
+<dl class="params"><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pkt</td><td>punkt początku statku </td></tr>
+    <tr><td class="paramname">dir</td><td>ilosć masztów </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a571529ef166fa0b1d3780c12cdaf5c9e"></a><!-- doxytag: member="AbstractPlayer::ustawStatek" ref="a571529ef166fa0b1d3780c12cdaf5c9e" args="(QPoint, AbstractShip::direction, int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_abstract_player.html#a571529ef166fa0b1d3780c12cdaf5c9e">AbstractPlayer::ustawStatek</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>pkt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AbstractShip::direction&#160;</td>
+          <td class="paramname"><em>dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ma</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>ustawia statek na wybrane położenie </p>
+<dl class="params"><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QPoint</td><td>początek statku </td></tr>
+    <tr><td class="paramname">AbstractShip::direction</td><td>kierunek </td></tr>
+    <tr><td class="paramname">int</td><td>liczba masztów </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a79ea7944446cff82cf3eb3707e78a9b1"></a><!-- doxytag: member="AbstractPlayer::ustawTrzyMasztowiec" ref="a79ea7944446cff82cf3eb3707e78a9b1" args="(QPoint pkt, AbstractShip::direction dir)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_abstract_player.html#a79ea7944446cff82cf3eb3707e78a9b1">AbstractPlayer::ustawTrzyMasztowiec</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>pkt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AbstractShip::direction&#160;</td>
+          <td class="paramname"><em>dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>ustawia trójmasztowca </p>
+<dl class="params"><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pkt</td><td>punkt początku statku </td></tr>
+    <tr><td class="paramname">dir</td><td>ilosć masztów </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab40efc1808f154bc8c1fcc4440cd775a"></a><!-- doxytag: member="AbstractPlayer::wykonajRuch" ref="ab40efc1808f154bc8c1fcc4440cd775a" args="(QPoint)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_abstract_player.html#ab40efc1808f154bc8c1fcc4440cd775a">AbstractPlayer::wykonajRuch</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Wykonuje ruch specyficzny dla danego gracza </p>
+<dl class="params"><dt><b>Parametry:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QPoint</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementowany w <a class="el" href="class_easy_si.html#a1fb3859fcdb76ae448b6ec154e032cc4">EasySi</a> i <a class="el" href="class_real_player.html#aeb30ecf73fc13f5bcc5835b40ce60e6f">RealPlayer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1afba7289199d5cddb6f12b764991b39"></a><!-- doxytag: member="AbstractPlayer::zniczenieStatku" ref="a1afba7289199d5cddb6f12b764991b39" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_abstract_player.html#a1afba7289199d5cddb6f12b764991b39">AbstractPlayer::zniczenieStatku</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>funkcja zmniejsza ilość pozostałych statków </p>
+
+</div>
+</div>
+<hr/><h2>Dokumentacja atrybutów składowych</h2>
+<a class="anchor" id="a159257130643a8599db6262c8bec6933"></a><!-- doxytag: member="AbstractPlayer::statki" ref="a159257130643a8599db6262c8bec6933" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="class_abstract_ship.html">AbstractShip</a>*&gt; <a class="el" href="class_abstract_player.html#a159257130643a8599db6262c8bec6933">AbstractPlayer::statki</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>tablica zawiera statki </p>
+
+</div>
+</div>
+<a class="anchor" id="a340588f03f7e55d502d2c16a052745f0"></a><!-- doxytag: member="AbstractPlayer::trafione" ref="a340588f03f7e55d502d2c16a052745f0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;QPoint,bool&gt; <a class="el" href="class_abstract_player.html#a340588f03f7e55d502d2c16a052745f0">AbstractPlayer::trafione</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>tablica zawierająca trafione punkty oraz ich wartośc logiczną </p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>/home/wemstar/GUI/Projekt1/Gracz/<a class="el" href="abstractplayer_8h_source.html">abstractplayer.h</a></li>
+<li>/home/wemstar/GUI/Projekt1/Gracz/abstractplayer.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Zmienne</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Sun May 12 2013 19:25:21 dla Gra w Statki programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>
