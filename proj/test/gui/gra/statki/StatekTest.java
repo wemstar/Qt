@@ -30,6 +30,7 @@ public class StatekTest {
 		
 		
 		
+		
 	}
 	
 	@Test(expected=BadPositionException.class)
