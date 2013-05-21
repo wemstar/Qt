@@ -56,6 +56,37 @@ public class PlanszaTest {
 		assertFalse(plansza.isHitShip(new Point(1,1)));
 		assertFalse(plansza.isHitShip(new Point(1,8)));
 	}
+	@Test
+	public void testAllShipDestroyed()
+	{
+		assertFalse(plansza.isLoser());
+		
+		assertTrue(plansza.isHitShip(new Point(0,0)));
+		assertTrue(plansza.isHitShip(new Point(1,0)));
+		assertTrue(plansza.isHitShip(new Point(2,0)));
+		assertTrue(plansza.isHitShip(new Point(3,0)));
+		
+		assertFalse(plansza.isLoser());
+		
+		assertTrue(plansza.isHitShip(new Point(5,1)));
+		assertTrue(plansza.isHitShip(new Point(6,1)));
+		assertTrue(plansza.isHitShip(new Point(7,1)));
+		
+		assertTrue(plansza.isHitShip(new Point(1,5)));
+		assertTrue(plansza.isHitShip(new Point(2,5)));
+		assertTrue(plansza.isHitShip(new Point(3,5)));
+		
+		assertFalse(plansza.isLoser());
+		
+		assertTrue(plansza.isHitShip(new Point(0,7)));
+		assertTrue(plansza.isHitShip(new Point(1,7)));
+		
+		assertTrue(plansza.isHitShip(new Point(9,9)));
+		
+		assertTrue(plansza.isLoser());
+		
+	}
+	
 	
 	private Plansza plansza;
 

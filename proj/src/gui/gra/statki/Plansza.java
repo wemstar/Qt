@@ -90,6 +90,15 @@ public class Plansza  {
 	
 	private List<Statek> statki=new ArrayList<Statek>();
 	private StatekFactory stocznia=new StatekFactory(1,2,3,4);
+	public boolean isLoser() {
+		for(Statek statek:statki)
+		{
+			if(!statek.isDestroyed())return false;
+			
+		}
+		
+		return true;
+	}
 	
 
 }
