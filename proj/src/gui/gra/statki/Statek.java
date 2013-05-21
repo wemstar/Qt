@@ -4,11 +4,30 @@ import gui.gra.wyjatki.BadPositionException;
 import java.util.*;
 import java.awt.Point;
 
+/**
+ * @author wemstar
+ * klasa reprezetuje staki wykorzystae w grze
+ *
+ */
+/**
+ * @author wemstar
+ *
+ */
+/**
+ * @author wemstar
+ *
+ */
 public class Statek {
 	
 	public static final int RIGHT=0;
 	public static final int DOWN=1;
 	
+	/**
+	 * @param punkt punkt poczatkowy statku
+	 * @param iloscMasztow ilosc masztow dla statku
+	 * @param dir kierunek staku
+	 * @throws BadPositionException
+	 */
 	public Statek(Point punkt,int iloscMasztow,int dir)throws BadPositionException
 	{
 		Point direc=direction(dir);
@@ -24,6 +43,13 @@ public class Statek {
 	
 	
 	
+	/**
+	 * funkcja sprawdza czy wspolrzedne dla sttku sa prawdziwe
+	 * @param punkt punkt poczatkowy statku
+	 * @param iloscMasztow ilosc masztow statku
+	 * @param dir kirunek statku
+	 * @throws BadPositionException
+	 */
 	private void isValid(Point punkt,int iloscMasztow,Point dir)throws BadPositionException
 	{
 		
@@ -38,6 +64,10 @@ public class Statek {
 			
 		}
 	}
+	/**
+	 * @param direction kierunek statku
+	 * @return zwraca punkt w postaci (dx,dy) któwy oznacza kierunek statku
+	 */
 	private Point direction(int direction)
 	{
 		int dx=direction==RIGHT?1:0;
@@ -52,6 +82,11 @@ public class Statek {
 	
 	
 
+	/**
+	 * sprawdza czy statek zostal trafiony
+	 * @param point punkt strału
+	 * @return true jestli został trafiony 
+	 */
 	public boolean isHit(Point point) {
 		
 		if(pozycja.containsKey(point))
@@ -67,6 +102,9 @@ public class Statek {
 
 
 
+	/**
+	 * @return true jesli statek jest zniszczony
+	 */
 	public boolean isDestroyed() {
 		if(pozycja.containsValue(new Integer(0)))return false;
 		return true;
@@ -75,6 +113,12 @@ public class Statek {
 
 
 
+	/**
+	 * ustawia pozycje statku
+	 * @param point punkt poczatkowy
+	 * @param dir kierunek statku
+	 * @throws BadPositionException
+	 */
 	public void setPosition(Point point, int dir) throws BadPositionException {
 		
 		isValid(point,iloscMasztow,direction(dir));
@@ -82,14 +126,18 @@ public class Statek {
 		
 	}
 	
+	/**
+	 * @return zwraca pozycje statku w postaci mapy punktow
+	 */
+	public Map<Point,Integer> getPozycja() {
+		return pozycja;
+	}
 	
 	
 	private Map<Point,Integer> pozycja=new HashMap<Point,Integer>();
 	private int iloscMasztow;
 
-	public Map<Point,Integer> getPozycja() {
-		return pozycja;
-	}
+	
 	
 	
 	

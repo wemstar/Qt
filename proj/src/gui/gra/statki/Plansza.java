@@ -9,18 +9,40 @@ import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
+/**
+ * @author wemstar
+ * klasa reprezentuje plansza dla graczy
+ */
+/**
+ * @author wemstar
+ *
+ */
 public class Plansza  {
 	
 	
 
+	/**
+	 * dodaje statki do planszy
+	 * @param poz pozycja statku
+	 * @param i ilosc masztow
+	 * @param x kirunek statku
+	 * @throws BadPositionException
+	 * @throws LimitException
+	 */
 	public void addShip(Point poz,int i,int x) throws BadPositionException, LimitException
 	{
-		if(limits[i-1]<1)throw new LimitException(poz,i);
-		Statek statek=new Statek(poz,i,x);
+		
+		Statek statek=stocznia.zwodujStetek(poz,i,x);
 		if(!isValidPosition(statek))throw new BadPositionException(poz);
 		statki.add(statek);
-		limits[i-1]--;
+		
 	}
+	
+	/**
+	 * sprawdza kolizje statku ze statkami na planszy
+	 * @param statek 
+	 * @return
+	 */
 	public boolean isValidPosition(Statek statek)
 	{
 		for(Statek stat:statki)
@@ -36,6 +58,12 @@ public class Plansza  {
 		return true;
 	}
 	
+	/**
+	 * zamienia wspolrzedna na punkt
+	 * @param poz
+	 * @return
+	 * @throws BadCoordinateException
+	 */
 	public Point zamienWspolrzedne(String[] poz)throws BadCoordinateException
 	{
 		if(poz.length!=2)throw new BadCoordinateException();
@@ -44,6 +72,12 @@ public class Plansza  {
 		return new Point(x,y);
 		
 	}
+	
+	/**
+	 * sprawdza czy statek z planszy został trafiony
+	 * @param punkt
+	 * @return
+	 */
 	public boolean isHitShip(Point punkt)
 	{
 		for(Statek statek:statki)
@@ -55,6 +89,7 @@ public class Plansza  {
 	
 	
 	private List<Statek> statki=new ArrayList<Statek>();
-	private int[] limits={4,3,2,1};
+	private StatekFactory stocznia=new StatekFactory(1,2,3,4);
+	
 
 }
