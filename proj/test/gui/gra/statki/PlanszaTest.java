@@ -45,7 +45,17 @@ public class PlanszaTest {
 		plansza.addShip(new Point(5,5), 2, Statek.DOWN);
 	}
 	
-	
+	@Test
+	public void testHitShip()
+	{
+		assertTrue(plansza.isHitShip(new Point(0,0)));
+		assertTrue(plansza.isHitShip(new Point(6,1)));
+		assertTrue(plansza.isHitShip(new Point(1,7)));
+		assertTrue(plansza.isHitShip(new Point(9,9)));
+		assertFalse(plansza.isHitShip(new Point(8,8)));
+		assertFalse(plansza.isHitShip(new Point(1,1)));
+		assertFalse(plansza.isHitShip(new Point(1,8)));
+	}
 	
 	private Plansza plansza;
 

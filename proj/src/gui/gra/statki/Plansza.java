@@ -44,6 +44,14 @@ public class Plansza  {
 		return new Point(x,y);
 		
 	}
+	public boolean isHitShip(Point punkt)
+	{
+		for(Statek statek:statki)
+		{
+			if(statek.isHit(punkt))return true;
+		}
+		return false;
+	}
 	
 	
 	private List<Statek> statki=new ArrayList<Statek>();
