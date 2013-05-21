@@ -16,7 +16,7 @@ public class Statek {
 		isValid(punkt,iloscMasztow,direc);
 		for(int i=0;i<iloscMasztow;++i)
 		{
-			pozycja.put(new Point(punkt.x+i+direc.x,punkt.y+i*direc.y),new Integer(0));
+			pozycja.put(new Point(punkt.x+i*direc.x,punkt.y+i*direc.y),new Integer(0));
 		}
 		
 	}
@@ -86,6 +86,10 @@ public class Statek {
 	
 	private Map<Point,Integer> pozycja=new HashMap<Point,Integer>();
 	private int iloscMasztow;
+
+	public Map<Point,Integer> getPozycja() {
+		return pozycja;
+	}
 	
 	
 	
