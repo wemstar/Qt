@@ -1,4 +1,4 @@
-package gui.gra.statki;
+package gui.gra.rdzen;
 
 import gui.gra.wyjatki.BadCoordinateException;
 import gui.gra.wyjatki.BadPositionException;
@@ -29,10 +29,10 @@ public class Plansza  {
 	 * @throws BadPositionException
 	 * @throws LimitException
 	 */
-	public void addShip(Point poz,int i,int x) throws BadPositionException, LimitException
+	public void addShip(Point poz,int maszty,int kierunek) throws BadPositionException, LimitException
 	{
 		
-		Statek statek=stocznia.zwodujStetek(poz,i,x);
+		Statek statek=stocznia.zwodujStetek(poz,maszty,kierunek);
 		if(!isValidPosition(statek))throw new BadPositionException(poz);
 		statki.add(statek);
 		
@@ -64,14 +64,7 @@ public class Plansza  {
 	 * @return
 	 * @throws BadCoordinateException
 	 */
-	public Point zamienWspolrzedne(String[] poz)throws BadCoordinateException
-	{
-		if(poz.length!=2)throw new BadCoordinateException();
-		int x=Integer.valueOf(poz[0]);
-		int y=Integer.valueOf(poz[1]);
-		return new Point(x,y);
-		
-	}
+	
 	
 	/**
 	 * sprawdza czy statek z planszy został trafiony
@@ -87,9 +80,6 @@ public class Plansza  {
 		return false;
 	}
 	
-	
-	private List<Statek> statki=new ArrayList<Statek>();
-	private StatekFactory stocznia=new StatekFactory(1,2,3,4);
 	public boolean isLoser() {
 		for(Statek statek:statki)
 		{
@@ -99,6 +89,38 @@ public class Plansza  {
 		
 		return true;
 	}
+	public void  losujPlansze()
+	{
+		for(int i=1;i<5;++i)
+		{
+			createShip(i);
+		}
+		
+	}
+	
+	
+	private void createShip(int i) {
+		while(stocznia.getLimit(i)>0)
+		{
+			try {
+				addShip(new Point(rand.nextInt(10),rand.nextInt(10)),i,rand.nextInt(2));
+			} catch (BadPositionException e) {
+				// TODO Auto-generated catch block
+				e.getMessage();
+			} catch (LimitException e) {
+				// TODO Auto-generated catch block
+				e.getMessage();
+			}
+		}
+		
+	}
+
+
+	private List<Statek> statki=new ArrayList<Statek>();
+	private StatekFactory stocznia=new StatekFactory(1,2,3,4);
+	private Random rand=new Random();
+
+	
 	
 
 }

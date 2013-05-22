@@ -1,11 +1,11 @@
-package gui.gra.statki;
+package gui.gra.rdzen;
 
 import static org.junit.Assert.*;
 
+import gui.gra.rdzen.Statek;
 import gui.gra.wyjatki.BadPositionException;
 
 import java.awt.Point;
-import java.util.HashMap;
 import java.util.*;
 
 import org.junit.*;

@@ -1,4 +1,4 @@
-package gui.gra.statki;
+package gui.gra.rdzen;
 
 import gui.gra.wyjatki.BadPositionException;
 import gui.gra.wyjatki.LimitException;
@@ -33,6 +33,10 @@ public class StatekFactory {
 		limits[iloscMasztow-1]--;
 		return new Statek( punkt, iloscMasztow,dir);
 		
+	}
+	public int getLimit(int i)
+	{
+		return limits[i-1];
 	}
 	private int[] limits={4,3,2,1};
 

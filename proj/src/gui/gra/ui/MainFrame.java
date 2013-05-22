@@ -1,4 +1,4 @@
-package gui.gra;
+package gui.gra.ui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -28,8 +28,12 @@ public class MainFrame extends JFrame {
 		this.setJMenuBar(menuBar);
 		JPanel centerPanel=new JPanel();
 		gracz1Panel=new PlanszaPanel();
+	
 		gracz2Panel=new PlanszaPanel();
+		gracz1Panel.setEnabled(false);
+		gracz2Panel.setEnabled(false);
 		centerPanel.add(gracz1Panel);
+		centerPanel.add(new JSeparator(SwingConstants.VERTICAL));
 		centerPanel.add(gracz2Panel);
 		centerPanel.setLayout(new BoxLayout(centerPanel,BoxLayout.X_AXIS));
 		this.add(centerPanel);

@@ -1,4 +1,4 @@
-package gui.gra.statki;
+package gui.gra.rdzen;
 
 import gui.gra.wyjatki.BadPositionException;
 import java.util.*;
