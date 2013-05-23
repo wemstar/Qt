@@ -10,6 +10,10 @@ public class Gracz {
 	{
 		plansza=plan;
 	}
+	public Plansza getPlansza()
+	{
+		return plansza;
+	}
 	public boolean przegrana()
 	{
 		return plansza.isLoser();

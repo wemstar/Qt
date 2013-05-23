@@ -1,5 +1,7 @@
 package gui.gra.ui;
 
+import gui.gra.GameFactory;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
@@ -7,7 +9,7 @@ import javax.swing.*;
 
 public class MainFrame extends JFrame {
 	
-	public MainFrame()
+	public MainFrame(GameFactory gameFactory)
 	{
 		menuBar=new JMenuBar();
 		mainMenu=new JMenu("Główne menu");
