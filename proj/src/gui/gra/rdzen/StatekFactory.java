@@ -38,6 +38,10 @@ public class StatekFactory {
 	{
 		return limits[i-1];
 	}
+	public int[] getLimits()
+	{
+		return limits;
+	}
 	private int[] limits={4,3,2,1};
 
 }

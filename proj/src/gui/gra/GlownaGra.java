@@ -15,7 +15,7 @@ public class GlownaGra {
 		
 		GameFactory gra=new GameFactory();
 		gra.utworzGre();
-		gra.rozpocznijGre();
+		gra.pokazOkno();
 		
 		
 	}

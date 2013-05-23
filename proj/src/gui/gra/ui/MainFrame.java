@@ -1,6 +1,7 @@
 package gui.gra.ui;
 
 import gui.gra.GameFactory;
+import gui.gra.rdzen.Game;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -9,11 +10,12 @@ import javax.swing.*;
 
 public class MainFrame extends JFrame {
 	
-	public MainFrame(GameFactory gameFactory)
+	public MainFrame(Game game)
 	{
+		this.game=game;
 		menuBar=new JMenuBar();
 		mainMenu=new JMenu("Główne menu");
-		NewGameAction newGame=new NewGameAction(this);
+		NewGameAction newGame=new NewGameAction(game);
 		mainMenu.add(newGame);
 		mainMenu.add(new AbstractAction("Exit")
 		{
@@ -52,6 +54,7 @@ public class MainFrame extends JFrame {
 	private JMenuItem menuItem;
 	private PlanszaPanel gracz1Panel;
 	private PlanszaPanel gracz2Panel;
+	private Game game;
 	
 
 }

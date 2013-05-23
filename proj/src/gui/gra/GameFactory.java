@@ -29,7 +29,7 @@ public class GameFactory {
 		{
 			public void run()
 			{
-				frame=new MainFrame(GameFactory.this);
+				frame=new MainFrame(GameFactory.this.gra);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setVisible(true);
 			}

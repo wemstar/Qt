@@ -97,6 +97,14 @@ public class Plansza  {
 		}
 		
 	}
+	public List<Statek> getShips()
+	{
+		return statki;
+	}
+	public int[] limits()
+	{
+		return stocznia.getLimits();
+	}
 	
 	
 	private void createShip(int i) {
