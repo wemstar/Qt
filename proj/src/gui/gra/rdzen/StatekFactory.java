@@ -1,7 +1,7 @@
 package gui.gra.rdzen;
 
-import gui.gra.wyjatki.BadPositionException;
-import gui.gra.wyjatki.LimitException;
+import gui.gra.rdzen.wyjatki.BadPositionException;
+import gui.gra.rdzen.wyjatki.LimitException;
 
 import java.awt.Point;
 

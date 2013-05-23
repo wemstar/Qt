@@ -5,8 +5,8 @@ import java.awt.event.*;
 import java.net.URL;
 
 import gui.gra.rdzen.Plansza;
-import gui.gra.wyjatki.BadPositionException;
-import gui.gra.wyjatki.LimitException;
+import gui.gra.rdzen.wyjatki.BadPositionException;
+import gui.gra.rdzen.wyjatki.LimitException;
 
 import javax.swing.*;
 

@@ -3,7 +3,7 @@ package gui.gra.rdzen;
 import static org.junit.Assert.*;
 
 import gui.gra.rdzen.Statek;
-import gui.gra.wyjatki.BadPositionException;
+import gui.gra.rdzen.wyjatki.BadPositionException;
 
 import java.awt.Point;
 import java.util.*;

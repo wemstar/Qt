@@ -1,4 +1,4 @@
-package gui.gra.wyjatki;
+package gui.gra.rdzen.wyjatki;
 
 import java.awt.Point;
 

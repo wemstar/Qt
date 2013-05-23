@@ -1,6 +1,7 @@
 package gui.gra.rdzen;
 
-import gui.gra.wyjatki.BadPositionException;
+import gui.gra.rdzen.wyjatki.BadPositionException;
+
 import java.util.*;
 import java.awt.Point;
 
