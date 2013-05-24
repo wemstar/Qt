@@ -9,7 +9,10 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class PlanszaPanel extends JPanel {
 	public PlanszaPanel(Plansza plansza,SetShipPanel.StatkiTableModel model)
@@ -51,7 +54,7 @@ public class PlanszaPanel extends JPanel {
 							Point last=gra.getSecondLastHit();
 							if(boll.getSecond())model.setValueAt(hit, last.x,last.y);
 							else model.setValueAt(mis, last.x,last.y);
-							//System.out.println(boll.getSecond());
+							//zSystem.out.println(boll.getSecond());
 								
 						} catch (EndGame e) {
 							// TODO Auto-generated catch block

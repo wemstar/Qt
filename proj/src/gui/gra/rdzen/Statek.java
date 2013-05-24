@@ -2,8 +2,9 @@ package gui.gra.rdzen;
 
 import gui.gra.rdzen.wyjatki.BadPositionException;
 
-import java.util.*;
 import java.awt.Point;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author wemstar

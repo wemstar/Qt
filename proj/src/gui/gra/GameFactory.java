@@ -1,11 +1,14 @@
 package gui.gra;
 
+import gui.gra.rdzen.Game;
+import gui.gra.rdzen.Gracz;
+import gui.gra.rdzen.Plansza;
+import gui.gra.rdzen.RandomMove;
+import gui.gra.ui.MainFrame;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-
-import gui.gra.rdzen.*;
-import gui.gra.ui.MainFrame;
 
 public class GameFactory {
 

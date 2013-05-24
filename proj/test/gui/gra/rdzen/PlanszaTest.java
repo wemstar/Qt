@@ -1,15 +1,15 @@
 package gui.gra.rdzen;
 
-import static org.junit.Assert.*;
-
-import gui.gra.rdzen.Plansza;
-import gui.gra.rdzen.Statek;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import gui.gra.rdzen.wyjatki.BadPositionException;
 import gui.gra.rdzen.wyjatki.LimitException;
 
 import java.awt.Point;
 
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
 
 public class PlanszaTest {
 

@@ -1,19 +1,25 @@
 package gui.gra.ui;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.net.URL;
-import java.util.*;
-
 import gui.gra.rdzen.Game;
 import gui.gra.rdzen.Plansza;
 import gui.gra.rdzen.Statek;
 import gui.gra.rdzen.wyjatki.BadPositionException;
 import gui.gra.rdzen.wyjatki.LimitException;
 
-import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableModel;
 
 public class SetShipPanel extends JPanel {
 	

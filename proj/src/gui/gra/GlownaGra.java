@@ -1,10 +1,5 @@
 package gui.gra;
 
-import gui.gra.ui.MainFrame;
-
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
 
 public class GlownaGra {
 	

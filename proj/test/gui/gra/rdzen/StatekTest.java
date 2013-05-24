@@ -1,14 +1,14 @@
 package gui.gra.rdzen;
 
-import static org.junit.Assert.*;
-
-import gui.gra.rdzen.Statek;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import gui.gra.rdzen.wyjatki.BadPositionException;
 
 import java.awt.Point;
-import java.util.*;
+import java.util.Map;
 
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
 
 public class StatekTest {
 

@@ -1,13 +1,13 @@
 package gui.gra.rdzen;
 
-import gui.gra.rdzen.wyjatki.BadCoordinateException;
 import gui.gra.rdzen.wyjatki.BadPositionException;
 import gui.gra.rdzen.wyjatki.LimitException;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.Point;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 /**
  * @author wemstar

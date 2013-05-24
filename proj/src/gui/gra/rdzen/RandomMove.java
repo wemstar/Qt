@@ -1,8 +1,9 @@
 package gui.gra.rdzen;
 
-import java.awt.*;
-import java.util.*;
+import java.awt.Point;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class RandomMove implements Move {
 
