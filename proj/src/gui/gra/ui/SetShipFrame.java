@@ -17,8 +17,9 @@ import javax.swing.table.TableModel;
 
 public class SetShipFrame extends JFrame {
 	
-	SetShipFrame(Game gra)
+	SetShipFrame(Game gra,MainFrame fram)
 	{
+		mainFrame=fram;
 		game=gra;
 		plansza=gra.getFirstPlayer().getPlansza();
 		
@@ -56,6 +57,12 @@ public class SetShipFrame extends JFrame {
 					plansza.addShip(new Point(x,y), i, dim);
 					status.setText(resource);
 					model.fireTableDataChanged();
+					if(plansza.isOverLimit())
+					{
+						
+						SetShipFrame.this.dispose();
+						mainFrame.rozpocznijGre();
+					}
 					
 					
 					
@@ -132,6 +139,7 @@ public class SetShipFrame extends JFrame {
 	private StatkiTableModel model;
 	private Game game;
 	private JLabel status=new JLabel();
+	MainFrame mainFrame;
 	
 
 }

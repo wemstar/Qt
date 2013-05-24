@@ -30,7 +30,7 @@ public class StatekFactory {
 	public Statek zwodujStetek(Point punkt,int iloscMasztow,int dir) throws BadPositionException, LimitException
 	{
 		if(limits[iloscMasztow-1]<1)throw new LimitException();
-		limits[iloscMasztow-1]--;
+		
 		return new Statek( punkt, iloscMasztow,dir);
 		
 	}
@@ -41,6 +41,10 @@ public class StatekFactory {
 	public int[] getLimits()
 	{
 		return limits;
+	}
+	public void decreseLimit(int i)
+	{
+		limits[i-1]--;
 	}
 	private int[] limits={4,3,2,1};
 

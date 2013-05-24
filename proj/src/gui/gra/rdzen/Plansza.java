@@ -34,6 +34,7 @@ public class Plansza  {
 		
 		Statek statek=stocznia.zwodujStetek(poz,maszty,kierunek);
 		if(!isValidPosition(statek))throw new BadPositionException(poz);
+		stocznia.decreseLimit(maszty);
 		statki.add(statek);
 		
 	}
@@ -101,9 +102,21 @@ public class Plansza  {
 	{
 		return statki;
 	}
-	public int[] limits()
+	public boolean isOverLimit()
 	{
-		return stocznia.getLimits();
+		for(int i=1;i<5;i++)if(stocznia.getLimit(i)>0)return false;
+		return true;
+		
+		
+	}
+	public int getOnPosition(Point pkt)
+	{
+		for(Statek sta:statki)
+		{
+			Map<Point,Integer> poz=sta.getPozycja();
+			if(poz.containsKey(pkt)){return poz.get(pkt);};
+		}
+		return -1;
 	}
 	
 	

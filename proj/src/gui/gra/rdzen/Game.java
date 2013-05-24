@@ -1,5 +1,9 @@
 package gui.gra.rdzen;
 
+import gui.gra.rdzen.wyjatki.EndGame;
+
+import java.awt.Point;
+
 public class Game {
 
 	public Gracz getSecondPlayer() {
@@ -21,6 +25,19 @@ public class Game {
 	{
 		return firstPlayer.przegrana()||secondPlayer.przegrana();
 	}
+	public boolean realPlayerMove(Point punkt)throws EndGame
+	{
+		boolean isHit=secondPlayer.reciveHit(punkt);
+		firstPlayer.reciveHit(secondPlayer.getNextMove());
+		if(isEndGame())
+		{
+			if(firstPlayer.przegrana())throw new EndGame("Przegral gracz 1");
+			else throw new EndGame("Przegral gracz 2");
+		}
+		return isHit;
+		
+	}
+	
 	
 	
 	

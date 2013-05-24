@@ -16,6 +16,7 @@ public class GameFactory {
 		player2.setMove(new RandomMove());
 		Plansza plPlayer1=new Plansza();
 		Plansza plPlayer2=new Plansza();
+		plPlayer2.losujPlansze();
 		player2.setPlansza(plPlayer2);
 		
 		Gracz player1=new Gracz();
@@ -37,14 +38,8 @@ public class GameFactory {
 		});
 		
 	}
-	public void rozpocznijWybieranie()
-	{
-		
-	}
-	public void rozpocznijGre()
-	{
-		
-	}
+	
+	
 	
 	
 	private Game gra;

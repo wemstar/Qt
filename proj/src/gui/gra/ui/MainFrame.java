@@ -15,7 +15,7 @@ public class MainFrame extends JFrame {
 		this.game=game;
 		menuBar=new JMenuBar();
 		mainMenu=new JMenu("Główne menu");
-		NewGameAction newGame=new NewGameAction(game);
+		NewGameAction newGame=new NewGameAction(game,this);
 		mainMenu.add(newGame);
 		mainMenu.add(new AbstractAction("Exit")
 		{
@@ -30,10 +30,20 @@ public class MainFrame extends JFrame {
 		});
 		menuBar.add(mainMenu);
 		this.setJMenuBar(menuBar);
+		this.setSize(400, 400);
+		
+		
+		
+		
+	}
+	public void rozpocznijGre()
+	{
 		JPanel centerPanel=new JPanel();
-		gracz1Panel=new PlanszaPanel();
+		gracz1Panel=new PlanszaPanel(game.getFirstPlayer().getPlansza());
 	
-		gracz2Panel=new PlanszaPanel();
+		gracz2Panel=new PlanszaPanel(game.getSecondPlayer().getPlansza());
+		gracz2Panel.addGame(game);
+		
 		gracz1Panel.setEnabled(false);
 		gracz2Panel.setEnabled(false);
 		centerPanel.add(gracz1Panel);
@@ -41,9 +51,8 @@ public class MainFrame extends JFrame {
 		centerPanel.add(gracz2Panel);
 		centerPanel.setLayout(new BoxLayout(centerPanel,BoxLayout.X_AXIS));
 		this.add(centerPanel);
+		
 		this.pack();
-		
-		
 	}
 	
 	

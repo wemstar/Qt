@@ -10,14 +10,15 @@ import javax.swing.*;
 
 public class NewGameAction extends AbstractAction {
 
-	public NewGameAction(Game game)
+	public NewGameAction(Game game,MainFrame frame)
 	{
 		super("New Game");
 		gra=game;
+		mainFrame=frame;
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		JFrame frame=new SetShipFrame(gra);
+		JFrame frame=new SetShipFrame(gra,mainFrame);
 		frame.addWindowListener(new WindowAdapter()
 		{
 			
@@ -29,5 +30,6 @@ public class NewGameAction extends AbstractAction {
 	
 	
 	private Game gra;
+	private MainFrame mainFrame;
 
 }
