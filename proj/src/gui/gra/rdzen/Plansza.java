@@ -37,6 +37,7 @@ public class Plansza  {
 		stocznia.decreseLimit(maszty);
 		statki.add(statek);
 		
+		
 	}
 	
 	/**
