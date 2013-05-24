@@ -5,8 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * @author wemstar
+ * Klasa reperzentuje ruch polegający na ostrzelaniu losowych punktow
+ */
 public class RandomMove implements Move {
 
+	/* (non-Javadoc)
+	 * @see gui.gra.rdzen.Move#nextMove()
+	 */
 	@Override
 	public Point nextMove() {
 		Point punkt;
@@ -20,6 +27,9 @@ public class RandomMove implements Move {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see gui.gra.rdzen.Move#setPlansza(gui.gra.rdzen.Plansza)
+	 */
 	@Override
 	public void setPlansza(Plansza plansza) {
 		this.plansza=plansza;

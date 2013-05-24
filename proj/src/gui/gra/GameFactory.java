@@ -2,6 +2,7 @@ package gui.gra;
 
 import gui.gra.rdzen.Game;
 import gui.gra.rdzen.Gracz;
+import gui.gra.rdzen.Move;
 import gui.gra.rdzen.Plansza;
 import gui.gra.rdzen.RandomMove;
 import gui.gra.ui.MainFrame;
@@ -12,19 +13,36 @@ import javax.swing.JFrame;
 
 public class GameFactory {
 
-	public void utworzGre() {
+	
+	
+	public void przygotujGre() {
 		
 		gra=new Game();
-		Gracz player2=new Gracz();
-		player2.setMove(new RandomMove());
-		Plansza plPlayer1=new Plansza();
-		Plansza plPlayer2=new Plansza();
-		plPlayer2.losujPlansze();
-		player2.setPlansza(plPlayer2);
-		
-		Gracz player1=new Gracz();
-		player1.setPlansza(plPlayer1);
+		Gracz player1=przygotujGracza(new RandomMove(),new Plansza());
+		Gracz player2=przygotujGracza(new RandomMove(),new Plansza());
 		gra.setPlayers(player1, player2);
+	}
+	public void nowaGra()
+	{
+		gra.getFirstPlayer().setPlansza(new Plansza());
+		gra.getSecondPlayer().setPlansza(new Plansza());
+		
+	}
+	private Gracz przygotujGracza(Move move,Plansza plansza)
+	{
+		Gracz gracz=new Gracz();
+		gracz.setMove(move);
+		gracz.setPlansza(plansza);
+		return gracz;
+	}
+	
+	
+	
+	public void utworzGre() {
+		
+		
+		
+		
 		
 	}
 
@@ -47,5 +65,6 @@ public class GameFactory {
 	
 	private Game gra;
 	private MainFrame frame;
+	
 
 }

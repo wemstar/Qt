@@ -11,14 +11,7 @@ import java.util.Map;
  * klasa reprezetuje staki wykorzystae w grze
  *
  */
-/**
- * @author wemstar
- *
- */
-/**
- * @author wemstar
- *
- */
+
 public class Statek {
 	
 	public static final int RIGHT=0;

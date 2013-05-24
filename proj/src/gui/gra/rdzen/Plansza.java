@@ -82,6 +82,10 @@ public class Plansza  {
 		return false;
 	}
 	
+	/**
+	 * sprawdza czy na planszy są nie zatopione statki
+	 * @return true jesli wszystkie statki zostały zatopione
+	 */
 	public boolean isLoser() {
 		for(Statek statek:statki)
 		{
@@ -91,6 +95,9 @@ public class Plansza  {
 		
 		return true;
 	}
+	/**
+	 * funkcja pozwala wylosowac plansze
+	 */
 	public void  losujPlansze()
 	{
 		for(int i=1;i<5;++i)
@@ -99,10 +106,19 @@ public class Plansza  {
 		}
 		
 	}
+	
+	/**
+	 * @return staki na planszy
+	 */
 	public List<Statek> getShips()
 	{
 		return statki;
 	}
+	
+	/**
+	 * sprawdza limit planszy
+	 * @return true jesli zostałl przekroczony limit
+	 */
 	public boolean isOverLimit()
 	{
 		for(int i=1;i<5;i++)if(stocznia.getLimit(i)>0)return false;
@@ -110,6 +126,11 @@ public class Plansza  {
 		
 		
 	}
+	/**
+	 * sprawdza czy dany punkt zawiera statek
+	 * @param pkt punkt proby
+	 * @return -1 jesli nie zawiera statku
+	 */
 	public int getOnPosition(Point pkt)
 	{
 		for(Statek sta:statki)
@@ -121,6 +142,10 @@ public class Plansza  {
 	}
 	
 	
+	/**
+	 * tworzy statek o 
+	 * @param i ilosć masztów
+	 */
 	private void createShip(int i) {
 		while(stocznia.getLimit(i)>0)
 		{

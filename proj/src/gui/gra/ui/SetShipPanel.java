@@ -32,9 +32,8 @@ public class SetShipPanel extends JPanel {
 		model=new StatkiTableModel(plansza);
 	    table = new JTable(model)
         {
-            //  Returning the Class of each column will allow different
-            //  renderers to be used based on Class
-            public Class getColumnClass(int column)
+            
+            public Class<ImageIcon> getColumnClass(int column)
             {
                 return ImageIcon.class;
             }
