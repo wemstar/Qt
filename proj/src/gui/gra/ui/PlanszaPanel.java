@@ -18,6 +18,8 @@ public class PlanszaPanel extends JPanel {
 		
 		this.plansza=plansza;
 		utworzPrzyciski();
+		hit=createImageIcon("resources/Hit.png","hit");
+		mis=createImageIcon("resources/Mis.png","mis");
 	}
 	public void odswierz()
 	{
@@ -43,8 +45,10 @@ public class PlanszaPanel extends JPanel {
 					public void actionPerformed(ActionEvent arg0) {
 					
 						try {
-							if(gra.realPlayerMove(punkt))button.setText("Hit");
-							else button.setText("Miss");
+							Game.BoolPar boll=gra.realPlayerMove(punkt)
+							if(boll.getFirst())button.setIcon(hit);
+							else button.setIcon(mis);
+							if(boll.getSecond())
 								
 						} catch (EndGame e) {
 							// TODO Auto-generated catch block
@@ -60,11 +64,21 @@ public class PlanszaPanel extends JPanel {
 		
 //		add(new JTable(10,10));
 	}
+	protected ImageIcon createImageIcon(String path,String description) {
+		java.net.URL imgURL = getClass().getResource(path);
+		if (imgURL != null) {
+			return new ImageIcon(imgURL, description);
+		} else {
+			System.err.println("Couldn't find file: " + getClass());
+				return null;
+		}
+	}
 	
 	
 	private Plansza plansza;
 	private Game gra;
-
+	private ImageIcon hit;
+	private ImageIcon mis;
 
 	public void addGame(Game game) {
 		gra=game;

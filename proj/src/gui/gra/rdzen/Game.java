@@ -25,17 +25,30 @@ public class Game {
 	{
 		return firstPlayer.przegrana()||secondPlayer.przegrana();
 	}
-	public boolean realPlayerMove(Point punkt)throws EndGame
+	public BoolPar realPlayerMove(Point punkt)throws EndGame
 	{
-		boolean isHit=secondPlayer.reciveHit(punkt);
-		firstPlayer.reciveHit(secondPlayer.getNextMove());
+		boolean isHit1=secondPlayer.reciveHit(punkt);
+		boolean isHit2=firstPlayer.reciveHit(secondPlayer.getNextMove());
 		if(isEndGame())
 		{
 			if(firstPlayer.przegrana())throw new EndGame("Przegral gracz 1");
 			else throw new EndGame("Przegral gracz 2");
 		}
-		return isHit;
+		return new BoolPar(isHit1,isHit2);
 		
+	}
+	public class BoolPar
+	{
+		private boolean second;
+		private boolean first;
+
+		BoolPar(boolean first,boolean second)
+		{
+			this.first=first;
+			this.second=second;
+		}
+		public boolean getFirst(){return first;}
+		public boolean getSecond(){return second;}
 	}
 	
 	

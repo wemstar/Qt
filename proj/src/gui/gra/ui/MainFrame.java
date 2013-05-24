@@ -38,8 +38,8 @@ public class MainFrame extends JFrame {
 	}
 	public void rozpocznijGre()
 	{
-		JPanel centerPanel=new JPanel();
-		gracz1Panel=new PlanszaPanel(game.getFirstPlayer().getPlansza());
+		
+		gracz1Panel=new SetShipPanel(game,this);
 	
 		gracz2Panel=new PlanszaPanel(game.getSecondPlayer().getPlansza());
 		gracz2Panel.addGame(game);
@@ -49,6 +49,7 @@ public class MainFrame extends JFrame {
 		centerPanel.add(gracz1Panel);
 		centerPanel.add(new JSeparator(SwingConstants.VERTICAL));
 		centerPanel.add(gracz2Panel);
+		
 		centerPanel.setLayout(new BoxLayout(centerPanel,BoxLayout.X_AXIS));
 		this.add(centerPanel);
 		
@@ -58,12 +59,14 @@ public class MainFrame extends JFrame {
 	
 	
 	
+	
 	private JMenuBar menuBar;
 	private JMenu mainMenu,aboutMenu;
 	private JMenuItem menuItem;
-	private PlanszaPanel gracz1Panel;
+	private SetShipPanel gracz1Panel;
 	private PlanszaPanel gracz2Panel;
 	private Game game;
+	JPanel centerPanel=new JPanel();
 	
 
 }

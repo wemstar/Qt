@@ -15,21 +15,32 @@ import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 
-public class SetShipFrame extends JFrame {
+public class SetShipPanel extends JPanel {
 	
-	SetShipFrame(Game gra,MainFrame fram)
+	SetShipPanel(Game gra,MainFrame fram)
 	{
 		mainFrame=fram;
 		game=gra;
 		plansza=gra.getFirstPlayer().getPlansza();
-		
+		setLayout(new BorderLayout());
 		model=new StatkiTableModel(plansza);
-	    table = new JTable(model);
+	    table = new JTable(model)
+        {
+            //  Returning the Class of each column will allow different
+            //  renderers to be used based on Class
+            public Class getColumnClass(int column)
+            {
+                return ImageIcon.class;
+            }
+            
+        };
 	    table.setFillsViewportHeight(true);
 	    JScrollPane scrollpane = new JScrollPane(table);
+	    table.setRowHeight(32);
 	    table.setCellSelectionEnabled(true);
 	    add(table);
-		JToolBar toolBar=new JToolBar();
+	    //mainFrame.add(table);
+	    JToolBar toolBar=new JToolBar();
 		addButton(toolBar,1,"resources/JednoMasztowiec.png");
 		addButton(toolBar,2,"resources/DwuMasztowiec.png");
 		addButton(toolBar,3,"resources/TrzyMasztowiec.png");
@@ -40,8 +51,13 @@ public class SetShipFrame extends JFrame {
 		
 		
 	}
-	private void addButton(JToolBar toolBar,final int i, final String resource) {
-		JButton button=new JButton(createImageIcon(resource,"cos"));
+	public JTable getTable()
+	{
+		return table;
+	}
+	private void addButton(final JToolBar toolBar,final int i, final String resource) {
+		final ImageIcon imageIcon=createImageIcon(resource,"cos");
+		JButton button=new JButton(imageIcon);
 		button.setActionCommand(Integer.toString(i));
 		button.addActionListener(new ActionListener()
 		{
@@ -50,18 +66,25 @@ public class SetShipFrame extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				int y=table.getSelectedColumn();
 				int x=table.getSelectedRow();
-				int dim=table.getSelectedColumnCount()>table.getSelectedRowCount()?1:0;
+				int dim=table.getSelectedColumnCount()>table.getSelectedRowCount()?Statek.DOWN:Statek.RIGHT;
 				
 				try {
 					
 					plansza.addShip(new Point(x,y), i, dim);
 					status.setText(resource);
+					int dx=(dim==Statek.RIGHT)?1:0;
+					int dy=(dim==Statek.DOWN)?1:0;
+					for(int j=0;j<i;++j)
+					{
+						model.setValueAt(imageIcon, x+j*dx, y+j*dy);
+					}
+					
 					model.fireTableDataChanged();
 					if(plansza.isOverLimit())
 					{
 						
-						SetShipFrame.this.dispose();
-						mainFrame.rozpocznijGre();
+						SetShipPanel.this.setEnabled(false);
+						SetShipPanel.this.remove(toolBar);
 					}
 					
 					
@@ -75,8 +98,8 @@ public class SetShipFrame extends JFrame {
 					
 				}
 				finally{
-					SetShipFrame.this.validate();
-					SetShipFrame.this.pack();
+					SetShipPanel.this.validate();
+					mainFrame.pack();
 				}
 				
 				
@@ -101,15 +124,11 @@ public class SetShipFrame extends JFrame {
 	{
 		public StatkiTableModel(Plansza plan)
 		{
-			data=plan.getShips();
+			
 		}
 		public Object getValueAt(int row, int col) {
-			Map<Point,Integer> map=new HashMap<Point,Integer>();
-			for(Statek stat:data)
-			{
-				map.putAll(stat.getPozycja());
-			}
-	        return map.get(new Point(row,col));
+			table.revalidate();
+			return data.get(new Point(row,col));
 	    }
 		public int getRowCount() { return 10; }
 		public int getColumnCount() { return 10; }
@@ -117,7 +136,7 @@ public class SetShipFrame extends JFrame {
 		public void setValueAt(Object aValue, int row, int col) 
 		{
 			
-			
+			data.put(new Point(row,col), (ImageIcon)aValue);
 			fireTableCellUpdated(row, col);
 			System.out.println(" "+aValue+row+col);
 		}
@@ -127,7 +146,7 @@ public class SetShipFrame extends JFrame {
 		
 		
 		
-		private java.util.List<Statek> data;
+		private java.util.Map<Point,ImageIcon> data=new HashMap<Point,ImageIcon>();
 	}
 	
 	
@@ -140,6 +159,7 @@ public class SetShipFrame extends JFrame {
 	private Game game;
 	private JLabel status=new JLabel();
 	MainFrame mainFrame;
+	
 	
 
 }
