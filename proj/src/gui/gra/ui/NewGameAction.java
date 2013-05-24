@@ -22,16 +22,7 @@ public class NewGameAction extends AbstractAction {
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		Gracz player2=new Gracz();
-		player2.setMove(new RandomMove());
-		Plansza plPlayer1=new Plansza();
-		Plansza plPlayer2=new Plansza();
-		plPlayer2.losujPlansze();
-		player2.setPlansza(plPlayer2);
 		
-		Gracz player1=new Gracz();
-		player1.setPlansza(plPlayer1);
-		gra.setPlayers(player1, player2);
 		
 		mainFrame.rozpocznijGre();
 	}

@@ -12,10 +12,10 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class PlanszaPanel extends JPanel {
-	public PlanszaPanel(Plansza plansza)
+	public PlanszaPanel(Plansza plansza,SetShipPanel.StatkiTableModel model)
 	{
 		this.setLayout(new GridLayout(10,10));
-		
+		 this.model=model;
 		this.plansza=plansza;
 		utworzPrzyciski();
 		hit=createImageIcon("resources/Hit.png","hit");
@@ -45,10 +45,13 @@ public class PlanszaPanel extends JPanel {
 					public void actionPerformed(ActionEvent arg0) {
 					
 						try {
-							Game.BoolPar boll=gra.realPlayerMove(punkt)
+							Game.BoolPar boll=gra.realPlayerMove(punkt);
 							if(boll.getFirst())button.setIcon(hit);
 							else button.setIcon(mis);
-							if(boll.getSecond())
+							Point last=gra.getSecondLastHit();
+							if(boll.getSecond())model.setValueAt(hit, last.x,last.y);
+							else model.setValueAt(mis, last.x,last.y);
+							//System.out.println(boll.getSecond());
 								
 						} catch (EndGame e) {
 							// TODO Auto-generated catch block
@@ -79,6 +82,7 @@ public class PlanszaPanel extends JPanel {
 	private Game gra;
 	private ImageIcon hit;
 	private ImageIcon mis;
+	SetShipPanel.StatkiTableModel model;
 
 	public void addGame(Game game) {
 		gra=game;

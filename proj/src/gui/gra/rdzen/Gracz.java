@@ -25,7 +25,8 @@ public class Gracz {
 	}
 	public Point getNextMove()
 	{
-		return move.nextMove();
+		last=move.nextMove();
+		return last;
 	}
 	public boolean reciveHit(Point strzal)
 	{
@@ -38,5 +39,10 @@ public class Gracz {
 	
 	public Move move;
 	private Plansza plansza;
+	public Point lastHit() {
+		// TODO Auto-generated method stub
+		return last;
+	}
+	Point last;
 
 }

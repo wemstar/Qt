@@ -41,7 +41,7 @@ public class MainFrame extends JFrame {
 		
 		gracz1Panel=new SetShipPanel(game,this);
 	
-		gracz2Panel=new PlanszaPanel(game.getSecondPlayer().getPlansza());
+		gracz2Panel=new PlanszaPanel(game.getSecondPlayer().getPlansza(),gracz1Panel.getModel());
 		gracz2Panel.addGame(game);
 		
 		gracz1Panel.setEnabled(false);

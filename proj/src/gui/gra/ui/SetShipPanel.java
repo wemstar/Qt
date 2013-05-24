@@ -51,9 +51,9 @@ public class SetShipPanel extends JPanel {
 		
 		
 	}
-	public JTable getTable()
+	public StatkiTableModel getModel()
 	{
-		return table;
+		return model;
 	}
 	private void addButton(final JToolBar toolBar,final int i, final String resource) {
 		final ImageIcon imageIcon=createImageIcon(resource,"cos");
@@ -138,7 +138,7 @@ public class SetShipPanel extends JPanel {
 			
 			data.put(new Point(row,col), (ImageIcon)aValue);
 			fireTableCellUpdated(row, col);
-			System.out.println(" "+aValue+row+col);
+			//System.out.println(" "+aValue+row+col);
 		}
 		
 		

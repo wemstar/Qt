@@ -28,6 +28,7 @@ public class Game {
 	public BoolPar realPlayerMove(Point punkt)throws EndGame
 	{
 		boolean isHit1=secondPlayer.reciveHit(punkt);
+		
 		boolean isHit2=firstPlayer.reciveHit(secondPlayer.getNextMove());
 		if(isEndGame())
 		{
@@ -49,6 +50,10 @@ public class Game {
 		}
 		public boolean getFirst(){return first;}
 		public boolean getSecond(){return second;}
+	}
+	public Point getSecondLastHit()
+	{
+		return secondPlayer.lastHit();
 	}
 	
 	
