@@ -58,6 +58,7 @@ public class PlanszaPanel extends JPanel {
 					
 						try {
 							Game.BoolPar boll=gra.realPlayerMove(punkt);
+							
 							if(boll.getFirst())button.setIcon(hit);
 							else button.setIcon(mis);
 							Point last=gra.getSecondLastHit();

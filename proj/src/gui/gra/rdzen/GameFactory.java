@@ -18,7 +18,9 @@ public class GameFactory {
 		
 		gra=new Game();
 		Gracz player1=przygotujGracza(new RandomMove(),new Plansza());
-		Gracz player2=przygotujGracza(new RandomMove(),new Plansza());
+		Plansza plan=new Plansza();
+		plan.losujPlansze();
+		Gracz player2=przygotujGracza(new RandomMove(),plan);
 		gra.setPlayers(player1, player2);
 		return gra;
 	}
