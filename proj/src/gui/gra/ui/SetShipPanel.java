@@ -105,30 +105,22 @@ public class SetShipPanel extends JPanel {
 					
 					plansza.addShip(new Point(x,y), i, dim);
 					status.setText(resource);
+					
 					int dx=(dim==Statek.RIGHT)?1:0;
 					int dy=(dim==Statek.DOWN)?1:0;
-					for(int j=0;j<i;++j)
-					{
-						model.setValueAt(imageIcon, x+j*dx, y+j*dy);
-					}
+					
+					for(int j=0;j<i;++j){model.setValueAt(imageIcon, x+j*dx, y+j*dy);}
 					
 					model.fireTableDataChanged();
 					if(plansza.isOverLimit())
 					{
-						
 						SetShipPanel.this.setEnabled(false);
 						SetShipPanel.this.remove(toolBar);
 					}
-					
-					
-					
-					
-					
-				} catch (BadPositionException | LimitException e) {
+				} 
+				catch (BadPositionException | LimitException e) {
 					
 					status.setText(e.getMessage());
-					
-					
 				}
 				finally{
 					SetShipPanel.this.validate();
@@ -165,6 +157,7 @@ public class SetShipPanel extends JPanel {
 			return data.get(new Point(row,col));
 	    }
 		public int getRowCount() { return 10; }
+		
 		public int getColumnCount() { return 10; }
 		
 		public void setValueAt(Object aValue, int row, int col) 
