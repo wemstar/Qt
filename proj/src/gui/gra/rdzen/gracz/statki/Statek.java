@@ -1,4 +1,4 @@
-package gui.gra.rdzen;
+package gui.gra.rdzen.gracz.statki;
 
 import gui.gra.rdzen.wyjatki.BadPositionException;
 
@@ -127,10 +127,15 @@ public class Statek {
 	public Map<Point,Integer> getPozycja() {
 		return pozycja;
 	}
+	public int getType() {
+		return iloscMasztow;
+	}
 	
 	
 	private Map<Point,Integer> pozycja=new HashMap<Point,Integer>();
 	private int iloscMasztow;
+
+	
 
 	
 	

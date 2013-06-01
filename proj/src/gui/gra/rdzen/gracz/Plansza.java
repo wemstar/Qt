@@ -1,5 +1,7 @@
-package gui.gra.rdzen;
+package gui.gra.rdzen.gracz;
 
+import gui.gra.rdzen.gracz.statki.Statek;
+import gui.gra.rdzen.gracz.statki.StatekFactory;
 import gui.gra.rdzen.wyjatki.BadPositionException;
 import gui.gra.rdzen.wyjatki.LimitException;
 
@@ -33,7 +35,7 @@ public class Plansza  {
 	{
 		
 		Statek statek=stocznia.zwodujStetek(poz,maszty,kierunek);
-		if(!isValidPosition(statek))throw new BadPositionException(poz);
+		if(!isValidPosition(statek)||stocznia.getLimit(maszty)<1)throw new BadPositionException(poz);
 		stocznia.decreseLimit(maszty);
 		statki.add(statek);
 		
@@ -136,7 +138,7 @@ public class Plansza  {
 		for(Statek sta:statki)
 		{
 			Map<Point,Integer> poz=sta.getPozycja();
-			if(poz.containsKey(pkt)){return poz.get(pkt);};
+			if(poz.containsKey(pkt)){return sta.getType();};
 		}
 		return -1;
 	}

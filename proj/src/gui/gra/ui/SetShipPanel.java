@@ -1,8 +1,8 @@
 package gui.gra.ui;
 
 import gui.gra.rdzen.Game;
-import gui.gra.rdzen.Plansza;
-import gui.gra.rdzen.Statek;
+import gui.gra.rdzen.gracz.Plansza;
+import gui.gra.rdzen.gracz.statki.Statek;
 import gui.gra.rdzen.wyjatki.BadPositionException;
 import gui.gra.rdzen.wyjatki.LimitException;
 
@@ -36,33 +36,43 @@ public class SetShipPanel extends JPanel {
 		mainFrame=fram;
 		game=gra;
 		plansza=gra.getFirstPlayer().getPlansza();
+		
 		setLayout(new BorderLayout());
+		
+		setTable();
+		
+		setToolBar();
+	}
+	private void setToolBar() {
+		
+		JToolBar toolBar=new JToolBar();
+		
+		addButton(toolBar,1,"resources/JednoMasztowiec.png");
+		addButton(toolBar,2,"resources/DwuMasztowiec.png");
+		addButton(toolBar,3,"resources/TrzyMasztowiec.png");
+		addButton(toolBar,4,"resources/CzteroMasztowiec.png");
+		
+		add(toolBar,BorderLayout.NORTH);
+		add(status,BorderLayout.SOUTH);
+		
+	}
+	private void setTable()
+	{
 		model=new StatkiTableModel(plansza);
 	    table = new JTable(model)
-        {
-            
+        { 
             public Class<ImageIcon> getColumnClass(int column)
             {
                 return ImageIcon.class;
             }
             
         };
+        
 	    table.setFillsViewportHeight(true);
-	    JScrollPane scrollpane = new JScrollPane(table);
+	    
 	    table.setRowHeight(32);
 	    table.setCellSelectionEnabled(true);
 	    add(table);
-	    //mainFrame.add(table);
-	    JToolBar toolBar=new JToolBar();
-		addButton(toolBar,1,"resources/JednoMasztowiec.png");
-		addButton(toolBar,2,"resources/DwuMasztowiec.png");
-		addButton(toolBar,3,"resources/TrzyMasztowiec.png");
-		addButton(toolBar,4,"resources/CzteroMasztowiec.png");
-		add(toolBar,BorderLayout.NORTH);
-		add(status,BorderLayout.SOUTH);
-		
-		
-		
 	}
 	
 	/**
@@ -95,30 +105,22 @@ public class SetShipPanel extends JPanel {
 					
 					plansza.addShip(new Point(x,y), i, dim);
 					status.setText(resource);
+					
 					int dx=(dim==Statek.RIGHT)?1:0;
 					int dy=(dim==Statek.DOWN)?1:0;
-					for(int j=0;j<i;++j)
-					{
-						model.setValueAt(imageIcon, x+j*dx, y+j*dy);
-					}
+					
+					for(int j=0;j<i;++j){model.setValueAt(imageIcon, x+j*dx, y+j*dy);}
 					
 					model.fireTableDataChanged();
 					if(plansza.isOverLimit())
 					{
-						
 						SetShipPanel.this.setEnabled(false);
 						SetShipPanel.this.remove(toolBar);
 					}
-					
-					
-					
-					
-					
-				} catch (BadPositionException | LimitException e) {
+				} 
+				catch (BadPositionException | LimitException e) {
 					
 					status.setText(e.getMessage());
-					
-					
 				}
 				finally{
 					SetShipPanel.this.validate();
@@ -155,6 +157,7 @@ public class SetShipPanel extends JPanel {
 			return data.get(new Point(row,col));
 	    }
 		public int getRowCount() { return 10; }
+		
 		public int getColumnCount() { return 10; }
 		
 		public void setValueAt(Object aValue, int row, int col) 

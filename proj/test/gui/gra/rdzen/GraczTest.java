@@ -3,6 +3,10 @@ package gui.gra.rdzen;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import gui.gra.rdzen.gracz.Gracz;
+import gui.gra.rdzen.gracz.Plansza;
+import gui.gra.rdzen.gracz.RandomMove;
+
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
