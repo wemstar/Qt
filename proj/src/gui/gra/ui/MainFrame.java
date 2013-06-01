@@ -25,7 +25,20 @@ public class MainFrame extends JFrame {
 		this.game=game;
 		menuBar=new JMenuBar();
 		mainMenu=new JMenu("Główne menu");
-		NewGameAction newGame=new NewGameAction(game,this);
+		AbstractAction newGame=new AbstractAction("New Game")
+		{
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				MainFrame.this.rozpocznijGre();
+			}
+			
+			
+			
+
+		};
 		mainMenu.add(newGame);
 		mainMenu.add(new AbstractAction("Exit")
 		{

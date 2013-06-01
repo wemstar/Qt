@@ -36,7 +36,8 @@ public class Gracz {
 		return plansza.isLoser();
 	}
 	
-	/** ustawai si odpowiedzalne za poruszanie gracza
+	/** ustawai SI odpowiedzalne za poruszanie gracza
+	 * najpierw należy wywołac setPlansza();
 	 * @param mov
 	 */
 	public void setMove(Move mov)

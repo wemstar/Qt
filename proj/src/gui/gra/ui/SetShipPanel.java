@@ -36,7 +36,29 @@ public class SetShipPanel extends JPanel {
 		mainFrame=fram;
 		game=gra;
 		plansza=gra.getFirstPlayer().getPlansza();
+		
 		setLayout(new BorderLayout());
+		setTable();
+		
+	    //mainFrame.add(table);
+		setToolBar();
+	    
+		
+		
+		
+	}
+	private void setToolBar() {
+		JToolBar toolBar=new JToolBar();
+		addButton(toolBar,1,"resources/JednoMasztowiec.png");
+		addButton(toolBar,2,"resources/DwuMasztowiec.png");
+		addButton(toolBar,3,"resources/TrzyMasztowiec.png");
+		addButton(toolBar,4,"resources/CzteroMasztowiec.png");
+		add(toolBar,BorderLayout.NORTH);
+		add(status,BorderLayout.SOUTH);
+		
+	}
+	private void setTable()
+	{
 		model=new StatkiTableModel(plansza);
 	    table = new JTable(model)
         {
@@ -47,22 +69,12 @@ public class SetShipPanel extends JPanel {
             }
             
         };
+        
 	    table.setFillsViewportHeight(true);
-	    JScrollPane scrollpane = new JScrollPane(table);
+	    
 	    table.setRowHeight(32);
 	    table.setCellSelectionEnabled(true);
 	    add(table);
-	    //mainFrame.add(table);
-	    JToolBar toolBar=new JToolBar();
-		addButton(toolBar,1,"resources/JednoMasztowiec.png");
-		addButton(toolBar,2,"resources/DwuMasztowiec.png");
-		addButton(toolBar,3,"resources/TrzyMasztowiec.png");
-		addButton(toolBar,4,"resources/CzteroMasztowiec.png");
-		add(toolBar,BorderLayout.NORTH);
-		add(status,BorderLayout.SOUTH);
-		
-		
-		
 	}
 	
 	/**
