@@ -4,6 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import gui.gra.rdzen.gracz.Plansza;
+import gui.gra.rdzen.gracz.statki.Statek;
 import gui.gra.rdzen.wyjatki.BadPositionException;
 import gui.gra.rdzen.wyjatki.LimitException;
 

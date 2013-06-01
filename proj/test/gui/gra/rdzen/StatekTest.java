@@ -2,6 +2,7 @@ package gui.gra.rdzen;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import gui.gra.rdzen.gracz.statki.Statek;
 import gui.gra.rdzen.wyjatki.BadPositionException;
 
 import java.awt.Point;

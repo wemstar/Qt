@@ -1,4 +1,4 @@
-package gui.gra.rdzen;
+package gui.gra.rdzen.gracz.statki;
 
 import gui.gra.rdzen.wyjatki.BadPositionException;
 

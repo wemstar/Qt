@@ -30,13 +30,8 @@ public class MainFrame extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
-				
 				MainFrame.this.rozpocznijGre();
 			}
-			
-			
-			
 
 		};
 		mainMenu.add(newGame);

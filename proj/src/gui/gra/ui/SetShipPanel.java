@@ -1,8 +1,8 @@
 package gui.gra.ui;
 
 import gui.gra.rdzen.Game;
-import gui.gra.rdzen.Statek;
 import gui.gra.rdzen.gracz.Plansza;
+import gui.gra.rdzen.gracz.statki.Statek;
 import gui.gra.rdzen.wyjatki.BadPositionException;
 import gui.gra.rdzen.wyjatki.LimitException;
 
@@ -40,7 +40,7 @@ public class SetShipPanel extends JPanel {
 		setLayout(new BorderLayout());
 		setTable();
 		
-	    //mainFrame.add(table);
+	    
 		setToolBar();
 	    
 		

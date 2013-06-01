@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import gui.gra.rdzen.gracz.Gracz;
 import gui.gra.rdzen.gracz.Plansza;
 import gui.gra.rdzen.gracz.RandomMove;
+import gui.gra.rdzen.gracz.statki.Statek;
 import gui.gra.rdzen.wyjatki.BadPositionException;
 import gui.gra.rdzen.wyjatki.LimitException;
 
