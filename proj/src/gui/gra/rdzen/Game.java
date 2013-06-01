@@ -1,5 +1,6 @@
 package gui.gra.rdzen;
 
+import gui.gra.rdzen.gracz.Gracz;
 import gui.gra.rdzen.wyjatki.EndGame;
 
 import java.awt.Point;

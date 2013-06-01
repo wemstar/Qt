@@ -1,4 +1,4 @@
-package gui.gra.rdzen;
+package gui.gra.rdzen.gracz;
 
 import java.awt.Point;
 import java.util.ArrayList;

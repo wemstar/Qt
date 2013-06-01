@@ -132,6 +132,10 @@ public class Statek {
 	private Map<Point,Integer> pozycja=new HashMap<Point,Integer>();
 	private int iloscMasztow;
 
+	public int getType() {
+		return iloscMasztow;
+	}
+
 	
 	
 	

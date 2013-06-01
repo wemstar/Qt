@@ -1,8 +1,8 @@
 package gui.gra.ui;
 
 import gui.gra.rdzen.Game;
-import gui.gra.rdzen.Plansza;
 import gui.gra.rdzen.Statek;
+import gui.gra.rdzen.gracz.Plansza;
 import gui.gra.rdzen.wyjatki.BadPositionException;
 import gui.gra.rdzen.wyjatki.LimitException;
 

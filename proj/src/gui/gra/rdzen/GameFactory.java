@@ -1,5 +1,9 @@
 package gui.gra.rdzen;
 
+import gui.gra.rdzen.gracz.Gracz;
+import gui.gra.rdzen.gracz.Move;
+import gui.gra.rdzen.gracz.Plansza;
+import gui.gra.rdzen.gracz.RandomMove;
 import gui.gra.ui.MainFrame;
 
 import java.awt.EventQueue;
@@ -10,12 +14,13 @@ public class GameFactory {
 
 	
 	
-	public void przygotujGre() {
+	public Game utworzGre() {
 		
 		gra=new Game();
 		Gracz player1=przygotujGracza(new RandomMove(),new Plansza());
 		Gracz player2=przygotujGracza(new RandomMove(),new Plansza());
 		gra.setPlayers(player1, player2);
+		return gra;
 	}
 	public void nowaGra()
 	{
@@ -33,33 +38,15 @@ public class GameFactory {
 	
 	
 	
-	public void utworzGre() {
-		
-		
-		
-		
-		
-	}
+	
 
-	public void pokazOkno() {
-		EventQueue.invokeLater(new Runnable()
-		{
-			public void run()
-			{
-				frame=new MainFrame(GameFactory.this.gra);
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				frame.setVisible(true);
-			}
-			
-		});
-		
-	}
+	
 	
 	
 	
 	
 	private Game gra;
-	private MainFrame frame;
+	
 	
 
 }

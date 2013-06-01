@@ -1,5 +1,7 @@
-package gui.gra.rdzen;
+package gui.gra.rdzen.gracz;
 
+import gui.gra.rdzen.Statek;
+import gui.gra.rdzen.StatekFactory;
 import gui.gra.rdzen.wyjatki.BadPositionException;
 import gui.gra.rdzen.wyjatki.LimitException;
 
@@ -136,7 +138,7 @@ public class Plansza  {
 		for(Statek sta:statki)
 		{
 			Map<Point,Integer> poz=sta.getPozycja();
-			if(poz.containsKey(pkt)){return poz.get(pkt);};
+			if(poz.containsKey(pkt)){return sta.getType();};
 		}
 		return -1;
 	}

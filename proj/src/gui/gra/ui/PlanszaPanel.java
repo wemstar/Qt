@@ -1,7 +1,7 @@
 package gui.gra.ui;
 
 import gui.gra.rdzen.Game;
-import gui.gra.rdzen.Plansza;
+import gui.gra.rdzen.gracz.Plansza;
 import gui.gra.rdzen.wyjatki.EndGame;
 
 import java.awt.GridLayout;
@@ -27,7 +27,7 @@ public class PlanszaPanel extends JPanel {
 	public PlanszaPanel(Plansza plansza,SetShipPanel.StatkiTableModel model)
 	{
 		this.setLayout(new GridLayout(10,10));
-		 this.model=model;
+		this.model=model;
 		this.plansza=plansza;
 		utworzPrzyciski();
 		hit=createImageIcon("resources/Hit.png","hit");
