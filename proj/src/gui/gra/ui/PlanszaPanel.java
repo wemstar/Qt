@@ -14,7 +14,16 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+/**
+ * @author wemstar
+ *
+ */
 public class PlanszaPanel extends JPanel {
+	
+	/**
+	 * @param plansza  panel reprezentujący plansze
+	 * @param model	model tabeli
+	 */
 	public PlanszaPanel(Plansza plansza,SetShipPanel.StatkiTableModel model)
 	{
 		this.setLayout(new GridLayout(10,10));
@@ -24,13 +33,13 @@ public class PlanszaPanel extends JPanel {
 		hit=createImageIcon("resources/Hit.png","hit");
 		mis=createImageIcon("resources/Mis.png","mis");
 	}
-	public void odswierz()
-	{
-		this.removeAll();
-		utworzPrzyciski();
-	}
 	
 	
+	
+	
+	/**
+	 * tworzy siatke przycisków
+	 */
 	private void utworzPrzyciski()
 	{
 		for(int x=0;x<10;++x)
@@ -68,8 +77,15 @@ public class PlanszaPanel extends JPanel {
 			}
 		}
 		
-//		add(new JTable(10,10));
+
 	}
+	
+	/**
+	 * wczytuje plik ze scieżki
+	 * @param path scieżka
+	 * @param description opis obrazka
+	 * @return Icone
+	 */
 	protected ImageIcon createImageIcon(String path,String description) {
 		java.net.URL imgURL = getClass().getResource(path);
 		if (imgURL != null) {

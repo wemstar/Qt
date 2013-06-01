@@ -6,6 +6,10 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+/**
+ * @author wemstar
+ * akcaj Rozpoczynająca nową grę
+ */
 public class NewGameAction extends AbstractAction {
 
 	public NewGameAction(Game game,MainFrame frame)

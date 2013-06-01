@@ -21,6 +21,14 @@ import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.table.AbstractTableModel;
 
+/**
+ * @author wemstar
+ * panel pozwalający ustawić statki
+ */
+/**
+ * @author wemstar
+ *
+ */
 public class SetShipPanel extends JPanel {
 	
 	SetShipPanel(Game gra,MainFrame fram)
@@ -56,10 +64,20 @@ public class SetShipPanel extends JPanel {
 		
 		
 	}
+	
+	/**
+	 * @return model dla tabeli
+	 */
 	public StatkiTableModel getModel()
 	{
 		return model;
 	}
+	
+	/**
+	 * @param toolBar pasek do którego zostanie dodany przycisk
+	 * @param i 
+	 * @param resource sciezka do ikonki
+	 */
 	private void addButton(final JToolBar toolBar,final int i, final String resource) {
 		final ImageIcon imageIcon=createImageIcon(resource,"cos");
 		JButton button=new JButton(imageIcon);
@@ -115,6 +133,7 @@ public class SetShipPanel extends JPanel {
 		toolBar.add(button);
 		
 	}
+	
 	protected ImageIcon createImageIcon(String path,String description) {
 		java.net.URL imgURL = getClass().getResource(path);
 		if (imgURL != null) {

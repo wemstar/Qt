@@ -14,6 +14,10 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
+/**
+ * @author wemstar
+ * Klasa reprezentujaca głowne okno gry
+ */
 public class MainFrame extends JFrame {
 	
 	public MainFrame(Game game)
@@ -42,6 +46,10 @@ public class MainFrame extends JFrame {
 		
 		
 	}
+	
+	/**
+	 * ustawia okienko do rozegrania gry 
+	 */
 	public void rozpocznijGre()
 	{
 		
