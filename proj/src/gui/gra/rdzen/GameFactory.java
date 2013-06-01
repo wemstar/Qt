@@ -22,17 +22,13 @@ public class GameFactory {
 		gra.setPlayers(player1, player2);
 		return gra;
 	}
-	public void nowaGra()
-	{
-		gra.getFirstPlayer().setPlansza(new Plansza());
-		gra.getSecondPlayer().setPlansza(new Plansza());
-		
-	}
+	
 	private Gracz przygotujGracza(Move move,Plansza plansza)
 	{
 		Gracz gracz=new Gracz();
-		gracz.setMove(move);
 		gracz.setPlansza(plansza);
+		gracz.setMove(move);
+		
 		return gracz;
 	}
 	

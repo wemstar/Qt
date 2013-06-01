@@ -17,12 +17,12 @@ public class GlownaGra {
 	{
 		
 		GameFactory gra=new GameFactory();
-		Game game=gra.utworzGre();
-		pokazOkno(game);
+		
+		pokazOkno(gra);
 		
 		
 	}
-	public static void pokazOkno(final Game game) {
+	public static void pokazOkno(final GameFactory game) {
 		EventQueue.invokeLater(new Runnable()
 		{
 			public void run()

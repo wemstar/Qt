@@ -38,21 +38,20 @@ public class SetShipPanel extends JPanel {
 		plansza=gra.getFirstPlayer().getPlansza();
 		
 		setLayout(new BorderLayout());
+		
 		setTable();
 		
-	    
 		setToolBar();
-	    
-		
-		
-		
 	}
 	private void setToolBar() {
+		
 		JToolBar toolBar=new JToolBar();
+		
 		addButton(toolBar,1,"resources/JednoMasztowiec.png");
 		addButton(toolBar,2,"resources/DwuMasztowiec.png");
 		addButton(toolBar,3,"resources/TrzyMasztowiec.png");
 		addButton(toolBar,4,"resources/CzteroMasztowiec.png");
+		
 		add(toolBar,BorderLayout.NORTH);
 		add(status,BorderLayout.SOUTH);
 		
@@ -61,8 +60,7 @@ public class SetShipPanel extends JPanel {
 	{
 		model=new StatkiTableModel(plansza);
 	    table = new JTable(model)
-        {
-            
+        { 
             public Class<ImageIcon> getColumnClass(int column)
             {
                 return ImageIcon.class;
