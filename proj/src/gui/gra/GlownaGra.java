@@ -1,5 +1,7 @@
 package gui.gra;
 
+import gui.gra.rdzen.GameFactory;
+
 
 public class GlownaGra {
 	

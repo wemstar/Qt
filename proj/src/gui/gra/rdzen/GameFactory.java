@@ -1,10 +1,5 @@
-package gui.gra;
+package gui.gra.rdzen;
 
-import gui.gra.rdzen.Game;
-import gui.gra.rdzen.Gracz;
-import gui.gra.rdzen.Move;
-import gui.gra.rdzen.Plansza;
-import gui.gra.rdzen.RandomMove;
 import gui.gra.ui.MainFrame;
 
 import java.awt.EventQueue;
