@@ -5,6 +5,10 @@ import gui.gra.rdzen.wyjatki.EndGame;
 
 import java.awt.Point;
 
+/**
+ * @author wemstar
+ * klasa reprezentująca grę
+ */
 public class Game {
 
 	/**

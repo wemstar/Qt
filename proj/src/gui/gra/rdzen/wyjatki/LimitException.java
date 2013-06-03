@@ -2,6 +2,10 @@ package gui.gra.rdzen.wyjatki;
 
 import java.awt.Point;
 
+/**
+ * @author wemstar
+ * wyjątek sygnalizujący wyczerpanie limitu statku na plnaszy
+ */
 public class LimitException extends Exception {
 	public LimitException(String str)
 	{

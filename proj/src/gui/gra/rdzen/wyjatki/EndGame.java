@@ -1,5 +1,9 @@
 package gui.gra.rdzen.wyjatki;
 
+/**
+ * @author wemstar
+ *	wyjątek rzucany gdy gra została zakończona
+ */
 public class EndGame extends Exception {
 
 	public EndGame() {

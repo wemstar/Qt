@@ -9,6 +9,10 @@ import gui.gra.rdzen.GameFactory;
 import gui.gra.ui.MainFrame;
 
 
+/**
+ * @author wemstar
+ *	klasa odopiada za rozpoczęcie gry to ją należy uruchomić
+ */
 public class GlownaGra {
 	
 	
@@ -22,6 +26,9 @@ public class GlownaGra {
 		
 		
 	}
+	/**
+	 * @param game GameFactory która odpowiada za tworzenie gry
+	 */
 	public static void pokazOkno(final GameFactory game) {
 		EventQueue.invokeLater(new Runnable()
 		{

@@ -15,10 +15,7 @@ import java.util.Random;
  * @author wemstar
  * klasa reprezentuje plansza dla graczy
  */
-/**
- * @author wemstar
- *
- */
+
 public class Plansza  {
 	
 	

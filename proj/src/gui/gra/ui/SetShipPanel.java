@@ -25,10 +25,7 @@ import javax.swing.table.AbstractTableModel;
  * @author wemstar
  * panel pozwalający ustawić statki
  */
-/**
- * @author wemstar
- *
- */
+
 public class SetShipPanel extends JPanel {
 	
 	SetShipPanel(Game gra,MainFrame fram)
@@ -43,6 +40,10 @@ public class SetShipPanel extends JPanel {
 		
 		setToolBar();
 	}
+	
+	/**
+	 *ustawia toolbar dla okna 
+	 */
 	private void setToolBar() {
 		
 		JToolBar toolBar=new JToolBar();
@@ -56,6 +57,9 @@ public class SetShipPanel extends JPanel {
 		add(status,BorderLayout.SOUTH);
 		
 	}
+	/**
+	 * ustawia tabelke okna
+	 */
 	private void setTable()
 	{
 		model=new StatkiTableModel(plansza);
@@ -136,6 +140,11 @@ public class SetShipPanel extends JPanel {
 		
 	}
 	
+	/**
+	 * @param path scieżka do obrazka
+	 * @param description opis obrazka
+	 * @return ikona statku
+	 */
 	protected ImageIcon createImageIcon(String path,String description) {
 		java.net.URL imgURL = getClass().getResource(path);
 		if (imgURL != null) {
@@ -146,6 +155,11 @@ public class SetShipPanel extends JPanel {
 		}
 	}
 	
+	/**
+	 * @author wemstar
+	 * klasa reprezentująca model planszy statków
+	 * dla tabeli
+	 */
 	class StatkiTableModel extends AbstractTableModel
 	{
 		public StatkiTableModel(Plansza plan)

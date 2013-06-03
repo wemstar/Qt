@@ -10,6 +10,11 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
+/**
+ * @author wemstar
+ * klasa jest Budowniczym gry
+ * buduje gre oraz plansze dla graczy
+ */
 public class GameFactory {
 
 	
